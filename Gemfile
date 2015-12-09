@@ -31,12 +31,16 @@ gem 'unicorn'
 
 gem 'settingslogic'
 
+gem "haml-rails", "~> 0.9"
+
+gem 'gon'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'quiet_assets'
 end
 
 group :development do
