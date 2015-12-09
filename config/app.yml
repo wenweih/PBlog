@@ -1,9 +1,8 @@
 # config/application.yml
 defaults: &defaults
-  cool:
-    saweet: nested settings
-  neat_setting: 24
-  awesome_setting: <%= "Did you know 5 + 5 = #{5 + 5}?" %>
+  admin:
+    email: mr.huangwenwei
+    pwd: hww8773084123
 
 development:
   <<: *defaults

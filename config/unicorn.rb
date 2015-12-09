@@ -17,7 +17,7 @@ timeout 30
 
 #listen 8080 # listen to port 8080 on all TCP interfaces
 #listen "127.0.0.1:8080"  # listen to port 8080 on the loopback interface
-listen "#{app_dir}/tmp/sockets/my_page.socket"
+listen "#{app_dir}/tmp/sockets/hww.socket", :backlog => 64
 
 pid "#{app_dir}/tmp/pids/unicorn.pid"
 stderr_path "#{app_dir}/log/unicorn.stderr.log"
