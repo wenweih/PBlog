@@ -1,6 +1,10 @@
 %head
   %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-  %title MyPage
+  %title
+    = if content_for?(:title) then yield(:title) + '|' end
+    @hww
+  %meta{name:'Description',content:"#{yield_meta_tag(:description, 'Default description')}"}
+  %meta{name:'Keywords',content:"#{yield_meta_tag(:keywords, 'defaults,ruby,rails')}"}
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
