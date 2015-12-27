@@ -7,31 +7,20 @@
     = render "layouts/footer"
 :scss
   body {
-      padding-top: 40px;
+    padding-top: 10vh;
   }
-
   header {
-      background: #f5b335;
-      height: 40px;
-      position: fixed;
-      top: 0;
-      transition: top 0.2s ease-in-out;
-      width: 100%;
+    background: rgba(255,255,255,.5)!important;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    z-index: 1000;
   }
-
   .nav-up {
-      top: -40px;
+    top: -10vh;
   }
-
-  main {
-     background:url(
-     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPklEQVQYV2O8dOnSfwYg0NPTYwTRuAAj0QqxmYBNM1briFaIzRbi3UiRZ75uNgUHGbfvabgfsHqGaIXYPAMAD8wgC/DOrZ4AAAAASUVORK5CYII=
-     ) repeat;
-      height: 2000px;
-  }
-
-  footer { background: #ddd;}
-  * { color: transparent}
 :javascript
   // Hide Header on on scroll down
   var didScroll;
@@ -40,34 +29,34 @@
   var navbarHeight = $('header').outerHeight();
 
   $(window).scroll(function(event){
-      didScroll = true;
+    didScroll = true;
   });
 
   setInterval(function() {
-      if (didScroll) {
-          hasScrolled();
-          didScroll = false;
-      }
+    if (didScroll) {
+      hasScrolled();
+      didScroll = false;
+    }
   }, 250);
 
   function hasScrolled() {
-      var st = $(this).scrollTop();
+    var st = $(this).scrollTop();
 
-      // Make sure they scroll more than delta
-      if(Math.abs(lastScrollTop - st) <= delta)
-          return;
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+      return;
 
-      // If they scrolled down and are past the navbar, add class .nav-up.
-      // This is necessary so you never see what is "behind" the navbar.
-      if (st > lastScrollTop && st > navbarHeight){
-          // Scroll Down
-          $('header').removeClass('nav-down').addClass('nav-up');
-      } else {
-          // Scroll Up
-          if(st + $(window).height() < $(document).height()) {
-              $('header').removeClass('nav-up').addClass('nav-down');
-          }
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+      // Scroll Down
+      $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+      // Scroll Up
+      if(st + $(window).height() < $(document).height()) {
+          $('header').removeClass('nav-up').addClass('nav-down');
       }
+    }
 
-      lastScrollTop = st;
+    lastScrollTop = st;
   }
