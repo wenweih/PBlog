@@ -34,6 +34,13 @@ gem 'settingslogic'
 gem "haml-rails", "~> 0.9"
 
 gem 'gon'
+
+#cache
+gem 'redis-rails' #Redis stores for Rack::Cache
+#This gem adds a Redis::Namespace class which can be used to namespace Redis keys.
+gem 'redis-namespace'
+gem 'redis', '~>3.2' #A Ruby client library for Redis
+# gem 'redis', '~>3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -41,6 +48,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'quiet_assets'
+  gem 'rack-mini-profiler'
 end
 
 group :development do

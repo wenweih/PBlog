@@ -1,24 +1,25 @@
 - title "首页"
 - meta_tag :description,"xxxx"
 - meta_tag :keywords,"博客"
-%main.pusher
-  .masthead.segment
-    .ui.text.container
-      %h1.ui.inverted.header
-        %span.person-title
-          黄文威
-        %span.person-description
-      .ui.fluid.horizontal.list
-        .item
-          = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
-        .item
-          = link_to "简  历","javascript:void(0)",class:'large ui inverted button'
-  .brief-itro.segment
-    .ui.container
-      %h2.ui.header
-        %span.intro-title 快速了解我
-        %span.intro-content
-          我叫黄文威，可以叫我阿威；92年出生于广东湛江，2015年毕业于华南理工大学广州学院，现居深圳南山并就职于开源中国；喜欢跑步、看书、编码、半个厨艺爱好者；同时我也是一名 Rubyist ,熟悉 Ruby On Rails 建站，若您需要帮助，请联系我。
+-cache 'home-index' do
+  %main.pusher
+    .masthead.segment
+      .ui.text.container
+        %h1.ui.inverted.header
+          %span.person-title
+            黄文威
+          %span.person-description
+        .ui.fluid.horizontal.list
+          .item
+            = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
+          .item
+            = link_to "简  历","javascript:void(0)",class:'large ui inverted button'
+    .brief-itro.segment
+      .ui.container
+        %h2.ui.header
+          %span.intro-title 快速了解我
+          %span.intro-content
+            我叫黄文威，可以叫我阿威；92年出生于广东湛江，2015年毕业于华南理工大学广州学院，现居深圳南山并就职于开源中国；喜欢跑步、看书、编码、半个厨艺爱好者；同时我也是一名 Rubyist ,熟悉 Ruby On Rails 建站，若您需要帮助，请联系我。
 :scss
   @-webkit-keyframes backgroundScroll {
     from {background-position: left top;}

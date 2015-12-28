@@ -29,6 +29,9 @@ module MyPage
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.cache_store = :redis_store, 'redis://127.0.0.1:6379/0/cache', { expires_in: 240.minutes }
+    config.redis = Redis.new(:url => 'redis://127.0.0.1:6379/0/cache')
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.autoload_paths << Rails.root.join('lib')
     config.active_record.raise_in_transactional_callbacks = true
