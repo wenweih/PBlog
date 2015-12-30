@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .textaligncenter{
+   text-align: center;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-align-items: center;
+         align-items: center;
+   -webkit-justify-content: center;
+         justify-content: center;
+ }
