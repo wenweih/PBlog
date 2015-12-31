@@ -7004,8 +7004,8 @@ a.ui.inverted.grey.header:hover {
 
 @font-face {
   font-family: 'Icons';
-  src: url("public/semantic/icons.eot");
-  src: url("public/semantic/icons.eot?#iefix") format('embedded-opentype'), url("public/semantic/icons.woff2") format('woff2'), url("public/semantic/icons.woff") format('woff'), url("public/semantic/icons.ttf") format('truetype'), url("public/semantic/icons.svg#icons") format('svg');
+  src: url("/semantic/icons.eot");
+  src: url("/semantic/icons.eot?#iefix") format('embedded-opentype'), url("/semantic/icons.woff2") format('woff2'), url("/semantic/icons.woff") format('woff'), url("/semantic/icons.ttf") format('truetype'), url("/semantic/icons.svg#icons") format('svg');
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

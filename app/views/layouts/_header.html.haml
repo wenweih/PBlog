@@ -1,14 +1,14 @@
 -cache 'header' do
   %header.nav-down.textaligncenter
     .ui.grid.menu-index
-      .four.wide.column
-      .eight.wide.column.main-menu-index
+      .five.wide.column
+      .six.wide.column.main-menu-index
         .ui.horizontal.list
           =link_to "博客","#",class:'item'
           =link_to "简历","#",class:'item'
           =link_to "项目","#",class:'item'
           =link_to "联系","#",class:'item'
-      .four.wide.column.wb
+      .five.wide.column.wb
         =link_to "外包","#",class:'wb-link'
 :scss
   .menu-index{
@@ -24,8 +24,9 @@
         color: #57cdf9;
       }
     }
-    .four.wide.column.wb{
-      text-align: right;
+    .five.wide.column.wb{
+      text-align: left;
+      vertical-align: middle;
       a{
         color: #D8262C;
         font-size: 20px;
@@ -35,6 +36,6 @@
 :javascript
   $('.wb-link').popup({
     inline   : true,
-    position: 'left center',
+    position: 'right center',
     content : '若需要帮您建站，请点击 ~'
   });
