@@ -39,6 +39,7 @@ GEM
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browser (1.0.1)
     builder (3.2.2)
     byebug (8.2.1)
     coffee-rails (4.1.0)
@@ -194,6 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browser
   byebug
   coffee-rails (~> 4.1.0)
   gon

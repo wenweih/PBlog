@@ -35,6 +35,8 @@ gem "haml-rails", "~> 0.9"
 
 gem 'gon'
 
+gem "browser"
+
 #cache
 gem 'redis-rails' #Redis stores for Rack::Cache
 #This gem adds a Redis::Namespace class which can be used to namespace Redis keys.
