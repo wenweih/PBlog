@@ -1,8 +1,8 @@
 # config/application.yml
 defaults: &defaults
   admin:
-    email: mr.huangwenwei
-    pwd: hww8773084123
+    email: xxx@gmail.com
+    pwd: xxx
 
 development:
   <<: *defaults
