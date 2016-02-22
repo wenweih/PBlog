@@ -10,15 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
- .textaligncenter{
-   text-align: center;
-   display: -webkit-flex;
-   display:         flex;
-   -webkit-align-items: center;
-         align-items: center;
-   -webkit-justify-content: center;
-         justify-content: center;
- }
+
+@import "bourbon";
+@import "semantic";
+@import "header";
+@import "footer";
+@import "home";
+
+%textaligncenter{
+  text-align: center !important;
+  display:  flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

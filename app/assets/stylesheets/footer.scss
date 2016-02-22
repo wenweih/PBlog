@@ -1,0 +1,31 @@
+footer{
+  height: 5em;
+  color: rgba(0,0,0,0.3);
+  .footer-index{
+    width:100%;
+    .eight.wide.column{
+      .main-footer{
+        .item{
+          font-size: 15px;
+          color: rgba(0,0,0,0.3);
+        }
+      }
+    }
+    .four.wide.column.footer-social{
+      font-size: 20px;
+      .social{
+        .item{
+          max-width:22px;
+          max-height:22px;
+        }
+        a{
+          color: rgba(0,0,0,0.3);
+        }
+      }
+      .oschina-icon{
+        max-width:20px;
+        max-height:20px;
+      }
+    }
+  }
+}

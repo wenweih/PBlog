@@ -1,5 +1,5 @@
 - title "首页"
-- meta_tag :description,"xxxx"
+- meta_tag :description,"黄文威 Rubyist"
 - meta_tag :keywords,"博客"
 -cache 'home-index' do
   %main.pusher
@@ -8,7 +8,8 @@
         %h1.ui.inverted.header
           %span.person-title
             黄文威
-          %span.person-description
+          %div.typedjs
+            %span.person-description
         .ui.fluid.horizontal.list
           .item
             = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
@@ -19,85 +20,16 @@
         %h2.ui.header
           %span.intro-title 快速了解我
           %span.intro-content
-            我叫黄文威，可以叫我阿威；92年出生于广东湛江，2015年毕业于华南理工大学广州学院，现居深圳南山并就职于开源中国；喜欢跑步、看书、编码、半个厨艺爱好者；同时我也是一名 Rubyist ,熟悉 Ruby On Rails 建站，若您需要帮助，请联系我。
-:scss
-  @-webkit-keyframes backgroundScroll {
-    from {background-position: left top;}
-    to {background-position: right bottom;}
-  }
-  @keyframes backgroundScroll {
-    from {background-position: left top;}
-    to {background-position: right bottom;}
-  }
-  .textaligncenter{
-    text-align: center;
-    display: -webkit-flex;
-    display:         flex;
-    -webkit-align-items: center;
-          align-items: center;
-    -webkit-justify-content: center;
-          justify-content: center;
-  }
-  .title{
-    color: rgba(255, 255, 255, 1);
-    display: block;
-    font-size: 1.75em;
-    font-weight: bold;
-  }
+            = SettingsLogic.admin.intro_content
 
-  .description{
-    margin:2rem 0;
-    color: rgba(255, 255, 255, 1);
-    display: block;
-    height:0.75em;
-    font-size: 0.75em;
-    font-weight: bold;
-  }
-  .background{
-    -webkit-animation: backgroundScroll 5s alternate infinite;
-    animation: backgroundScroll 5s alternate infinite;
-    background-size: cover;
-    @extend .textaligncenter;
-  }
-
-  .masthead.segment{
-    height:90vh;
-    background-image: url(/bg-img.jpg);
-    @extend .background;
-    opacity: 0.85;
-    .ui.container{
-      .person-title{
-        @extend .title;
-      }
-      .person-description{
-        @extend .description;
-      }
-      .ui.fluid.horizontal.list{
-        width:100%;
-      }
-    }
-  }
-  .brief-itro.segment{
-    height:90vh;
-    background-image: url(/brief-intro.jpg);
-    @extend .background;
-    .ui.container{
-      max-width: 600px !important;
-      .intro-title{
-        @extend .title;
-      }
-      .intro-content{
-        @extend .description;
-      }
-    }
-  }
-:javascript
-  $('.person-description').typed({
-    strings: ["专注于 Web 全栈开发，立志成为一名厨师的工程师"],
-    loop: true,
-    showCursor: false,
-    startDelay: 500,
-    backSpeed: 10,
-    backDelay: 1500,
+:coffee
+  $('.person-description').typed
+    strings: [ '专注于 Web 全栈开发，致力于设计用户体验良好的网页' ]
+    loop: true
+    showCursor: true
+    startDelay: 500
+    backSpeed: 10
+    backDelay: 1500
     typeSpeed: 80
-  });
+    cursorChar: "|"
+    contentType: 'html'

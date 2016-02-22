@@ -1,62 +1,9 @@
 !!! 5
 %html
-  = render "layouts/head"
+  - meta_tag :description,"hww huangwenwei www.huangwenwei.me 专注 Ruby on Rails web 全栈开发 蔬本华素食网站 站长，推广素食文化。"
+  - meta_tag :keywords,"网站,Ruby,Rubyist,开源,环保"
+  = render 'head'
   %body
-    = render "layouts/header"
+    = render 'header'
     = yield
-    = render "layouts/footer"
-:scss
-  body {
-    padding-top: 10vh;
-  }
-  header {
-    background: rgba(255,255,255,.5)!important;
-    height: 10vh;
-    position: fixed;
-    top: 0;
-    transition: top 0.2s ease-in-out;
-    width: 100%;
-    z-index: 1000;
-  }
-  .nav-up {
-    top: -10vh;
-  }
-:javascript
-  // Hide Header on on scroll down
-  var didScroll;
-  var lastScrollTop = 0;
-  var delta = 5;
-  var navbarHeight = $('header').outerHeight();
-
-  $(window).scroll(function(event){
-    didScroll = true;
-  });
-
-  setInterval(function() {
-    if (didScroll) {
-      hasScrolled();
-      didScroll = false;
-    }
-  }, 250);
-
-  function hasScrolled() {
-    var st = $(this).scrollTop();
-
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-      return;
-
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight){
-      // Scroll Down
-      $('header').removeClass('nav-down').addClass('nav-up');
-    } else {
-      // Scroll Up
-      if(st + $(window).height() < $(document).height()) {
-          $('header').removeClass('nav-up').addClass('nav-down');
-      }
-    }
-
-    lastScrollTop = st;
-  }
+    = render 'footer'

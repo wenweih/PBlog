@@ -1,0 +1,26 @@
+header {
+  background: rgba(0,0,0,.5)!important;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu-index{
+  margin-top: 0!important;
+  width:100%;
+  .main-menu-index{
+    height: 40px;
+    .ui.horizontal.list a{
+      color: rgba(255, 255, 255, 1);
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 20px;
+    }
+    .ui.horizontal.list a:hover{
+      color: #57cdf9;
+    }
+  }
+}

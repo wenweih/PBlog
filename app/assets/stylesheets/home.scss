@@ -1,3 +1,69 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin background{
+  @extend %textaligncenter;
+  @include animation(backgroundScroll 5.0s alternate infinite);
+  background-size: cover;
+}
+
+%title{
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+@include keyframes(backgroundScroll) {
+  from {
+    background-position: left top;
+  }
+  to {
+    background-position: right bottom;
+  }
+}
+
+%description{
+  margin:2rem 0;
+  color: rgba(255, 255, 255, 1);
+  display: block;
+  height:0.75em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.masthead.segment{
+  height:45em;
+  @include background-image(url("/bg-img.jpg"), linear-gradient(white 0, white 50%, transparent 50%));
+  @include background;
+  opacity: 0.85;
+  .ui.container{
+    .typedjs{
+      padding: 1em;
+      text-align:center;
+    }
+    .person-title{
+      @extend %title;
+    }
+    .person-description{
+      white-space:pre;
+      display:inline;
+      @extend %description;
+    }
+    .ui.fluid.horizontal.list{
+      width:100%;
+    }
+  }
+}
+.brief-itro.segment{
+  height:40em;
+  @include background;
+  .ui.container{
+    max-width: 600px !important;
+    .intro-title{
+      @extend %title;
+      color: rgba(0,0,0,.87) !important;
+    }
+    .intro-content{
+      color: rgba(0,0,0,.87) !important;
+      @extend %description;
+    }
+  }
+}

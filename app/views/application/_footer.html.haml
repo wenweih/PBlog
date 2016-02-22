@@ -1,15 +1,16 @@
 - cache 'footer' do
-  %footer.textaligncenter
+  %footer
+    .ui.divider
     .ui.grid.footer-index
-      .four.wide.column
-        %p.power © 2015 HuangWenwei, Inc.
-      .eight.wide.column
+      .four.wide.column.center.aligned
+        %p.power © 2016 HuangWenwei, Inc.
+      .eight.wide.column.center.aligned
         .ui.horizontal.list.main-footer
           =link_to "服务","#",class:'item'
           =link_to "客户","#",class:'item'
           =link_to "联系","#",class:'item'
           =link_to "雇佣","#",class:'item'
-      .four.wide.column.footer-social
+      .four.wide.column.footer-social.center.aligned
         .ui.horizontal.list.social
         = link_to "https://github.com/wenweih",class:'item',target:'_blank' do
           %i.github.icon
@@ -22,35 +23,3 @@
           = image_tag "/oschina.png",class:'oschina-icon'
         = link_to "https://twitter.com/idhww",class:'item',target:'_blank' do
           %i.twitter.icon
-:scss
-  footer{
-    height: 10vh;
-    color: rgba(0,0,0,0.3);
-    .footer-index{
-      width:100%;
-      .eight.wide.column{
-        .main-footer{
-          .item{
-            font-size: 15px;
-            color: rgba(0,0,0,0.3);
-          }
-        }
-      }
-      .four.wide.column.footer-social{
-        font-size: 20px;
-        .social{
-          .item{
-            max-width:22px;
-            max-height:22px;
-          }
-          a{
-            color: rgba(0,0,0,0.3);
-          }
-        }
-        .oschina-icon{
-          max-width:20px;
-          max-height:20px;
-        }
-      }
-    }
-  }
