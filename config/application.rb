@@ -26,7 +26,9 @@ module MyPage
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = 'zh-CN'
+    config.i18n.available_locales = ['zh-CN', 'en']
     # config.i18n.default_locale = :de
 
     config.cache_store = :redis_store, 'redis://127.0.0.1:6379/0/cache', { expires_in: 240.minutes }

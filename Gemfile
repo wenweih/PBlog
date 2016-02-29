@@ -42,6 +42,8 @@ gem "browser"
 
 gem 'clearance'
 
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
+
 # gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 
 #cache
