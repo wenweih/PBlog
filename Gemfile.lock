@@ -36,17 +36,23 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bourbon (4.2.6)
       sass (~> 3.4)
       thor (~> 0.19)
-    browser (1.1.0)
+    browser (2.0.1)
     builder (3.2.2)
     byebug (8.2.2)
+    clearance (1.12.1)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -54,8 +60,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    concurrent-ruby (1.0.0)
+    concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -88,6 +96,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     kgio (2.10.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -204,11 +216,13 @@ DEPENDENCIES
   bourbon
   browser
   byebug
+  clearance
   coffee-rails (~> 4.1.0)
   gon
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener
   mysql2 (>= 0.3.13, < 0.5)
   quiet_assets
   rack-mini-profiler

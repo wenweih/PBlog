@@ -40,6 +40,10 @@ gem 'gon'
 
 gem "browser"
 
+gem 'clearance'
+
+# gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
+
 #cache
 gem 'redis-rails' #Redis stores for Rack::Cache
 #This gem adds a Redis::Namespace class which can be used to namespace Redis keys.
@@ -57,6 +61,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
