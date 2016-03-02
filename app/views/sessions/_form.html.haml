@@ -1,0 +1,18 @@
+= form_for :session, url: session_path,:html=>{class:'ui large form'} do |form|
+  .ui.stacked.segment
+    .field
+      .ui.left.icon.input
+        %i.user.icon
+        = form.text_field :email, type: 'email',placeholder:'邮箱'
+    .field
+      .ui.left.icon.input
+        %i.lock.icon
+        = form.password_field :password,placeholder:'密码'
+    .field
+      = form.submit "登录",class:'ui fluid large teal submit button'
+  .other-links
+    - if Clearance.configuration.allow_sign_up?
+      .ui.buttons
+        = link_to t(".sign_up"), sign_up_path,class:'ui button'
+        .or
+        = link_to t(".forgot_password"), new_password_path,class:'ui button'

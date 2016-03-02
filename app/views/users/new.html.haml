@@ -1,0 +1,8 @@
+- title "注册"
+= form_for @user,:html=>{class:'ui large form'} do |form|
+  .ui.stacked.segment
+    = render partial: '/users/form', object: form
+    .field
+      = form.submit "注册",class:'ui fluid large teal submit button'
+.other-links
+  = link_to t(".sign_in"), sign_in_path,class:'ui button'
