@@ -41,10 +41,15 @@ gem 'gon'
 gem "browser"
 
 gem 'clearance'
+gem "administrate", "~> 0.1.4"
 
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 
-# gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_commentable_with_threading'
+
+gem "storytime"
 
 #cache
 gem 'redis-rails' #Redis stores for Rack::Cache
@@ -59,7 +64,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'quiet_assets'
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
 end
 
 group :development do
