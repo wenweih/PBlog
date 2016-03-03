@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  
+
   namespace :admin do
     resources :users
+    resources :posts
 
     root to: "users#index"
   end
