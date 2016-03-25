@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org'
+source 'http://gems.ruby-china.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,8 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5.0.0.beta'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -42,6 +42,9 @@ gem "browser"
 
 gem 'clearance'
 gem "administrate", "~> 0.1.4"
+
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 

@@ -1,0 +1,20 @@
+= javascript_include_tag 'editor'
+= stylesheet_link_tag 'editor'
+.simditor
+  = f.text_area :content
+
+:javascript
+  var editor = new Simditor({
+    textarea: $('#post_content'),
+    markdown: false,
+    toolbar: ['title','bold', 'italic', 'underline','strikethrough','fontScale', 'color',
+              '|', 'ol', 'ul', '|', 'blockquote','code','table','link','image','hr','indent',
+              'outdent','alignment','markdown', 'fullscreen'],
+    upload: {
+      url: '/upload_file',
+      fileKey: 'upload_file',
+      connectionCount: 3,
+      leaveConfirm: 'Uploading is in progress, are you sure to leave this page?'
+    },
+    pasteImage: true
+  });

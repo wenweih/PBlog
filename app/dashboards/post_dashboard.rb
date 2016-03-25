@@ -13,6 +13,7 @@ class PostDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     title: Field::String,
     content: Field::Text,
+    count: Field::Number,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +26,7 @@ class PostDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :title,
+    :count,
   ]
 
   # SHOW_PAGE_ATTRIBUTES

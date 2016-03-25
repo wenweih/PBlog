@@ -8,7 +8,7 @@ GIT
       railties (~> 4.0)
 
 GEM
-  remote: https://ruby.taobao.org/
+  remote: http://gems.ruby-china.org/
   specs:
     CFPropertyList (2.3.2)
     actionmailer (4.2.5)
@@ -66,11 +66,11 @@ GEM
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
     arel (6.0.3)
-    autoprefixer-rails (6.3.3.1)
+    autoprefixer-rails (6.3.4)
       execjs
     awesome_nested_set (3.0.3)
       activerecord (>= 4.0.0, < 5)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-kaminari-views (0.0.5)
@@ -82,7 +82,7 @@ GEM
     bourbon (4.2.6)
       sass (~> 3.4)
       thor (~> 0.19)
-    browser (2.0.1)
+    browser (2.0.2)
     builder (3.2.2)
     byebug (8.2.2)
     carrierwave (0.10.0)
@@ -90,7 +90,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    clearance (1.12.1)
+    clearance (1.13.0)
       bcrypt
       email_validator (~> 1.4)
       rails (>= 3.1)
@@ -117,7 +117,7 @@ GEM
     email_validator (1.6.0)
       activemodel
     erubis (2.7.0)
-    excon (0.47.0)
+    excon (0.48.0)
     execjs (2.6.0)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -155,7 +155,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.8.1)
+    fog-aws (0.9.2)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -168,7 +168,7 @@ GEM
       builder
       excon (~> 0.45)
       formatador (~> 0.2)
-    fog-dynect (0.0.2)
+    fog-dynect (0.0.3)
       fog-core
       fog-json
       fog-xml
@@ -182,7 +182,7 @@ GEM
     fog-json (1.0.2)
       fog-core (~> 1.0)
       multi_json (~> 1.10)
-    fog-local (0.2.1)
+    fog-local (0.3.0)
       fog-core (~> 1.27)
     fog-powerdns (0.1.1)
       fog-core (~> 1.27)
@@ -221,7 +221,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (0.6.0)
+    fog-vsphere (0.6.3)
       fog-core
       rbvmomi (~> 1.8)
     fog-xenserver (0.2.3)
@@ -262,8 +262,8 @@ GEM
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jquery-rails (4.1.0)
-      rails-dom-testing (~> 1.0)
+    jquery-rails (4.1.1)
+      rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
@@ -285,17 +285,19 @@ GEM
       launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.3)
-      mime-types (>= 1.16, < 3)
-    mime-types (2.99.1)
-    mini_magick (4.4.0)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0221)
+    mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     momentjs-rails (2.11.0)
       railties (>= 3.1)
     multi_json (1.11.2)
     mysql2 (0.4.3)
-    neat (1.7.3)
+    neat (1.7.4)
       bourbon (>= 4.0)
       sass (>= 3.3)
     nokogiri (1.6.7.2)
@@ -307,6 +309,8 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -334,7 +338,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.16.0)
-    rake (10.5.0)
+    rake (11.1.1)
     rbvmomi (1.8.2)
       builder
       nokogiri (>= 1.4.1)
@@ -360,8 +364,14 @@ GEM
       redis-store (~> 1.1.0)
     redis-store (1.1.7)
       redis (>= 2.2)
+    refile (0.5.3)
+      mime-types
+      sinatra (~> 1.4.5)
+    refile-mini_magick (0.2.0)
+      mini_magick (~> 4.0)
+      refile (~> 0.5)
     request_store (1.3.0)
-    responders (2.1.1)
+    responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
     ruby_parser (3.8.1)
       sexp_processor (~> 4.1)
@@ -381,11 +391,15 @@ GEM
     simple_form (3.2.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.3)
+    sprockets-rails (3.0.4)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -426,13 +440,13 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.2)
     trollop (2.1.2)
-    turbolinks (2.5.3)
-      coffee-rails
+    turbolinks (5.0.0.beta2)
+      turbolinks-source
+    turbolinks-source (5.0.0.beta3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
+    uglifier (3.0.0)
+      execjs (>= 0.3.0, < 3)
     unicorn (5.0.1)
       kgio (~> 2.6)
       rack
@@ -472,12 +486,14 @@ DEPENDENCIES
   redis (~> 3.2)
   redis-namespace
   redis-rails
+  refile
+  refile-mini_magick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   settingslogic
   spring
   storytime
-  turbolinks
+  turbolinks (~> 5.0.0.beta)
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)

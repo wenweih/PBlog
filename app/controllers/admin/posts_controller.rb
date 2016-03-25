@@ -7,6 +7,18 @@ module Admin
     #   super
     #   @resources = User.all.paginate(10, params[:page])
     # end
+    def update
+      if requested_resource.update(resource_params)
+        redirect_to(
+          admin_posts_path,
+          notice: "#{requested_resource.title}更新成功",
+        )
+      else
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource),
+        }
+      end
+    end
 
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)

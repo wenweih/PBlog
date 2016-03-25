@@ -1,0 +1,9 @@
+#= require jquery
+#= require module
+#= require hotkeys
+#= require uploader
+#= require marked
+#= require to-markdown
+#= require simditor
+#= require simditor-markdown
+#= require simditor-fullscreen

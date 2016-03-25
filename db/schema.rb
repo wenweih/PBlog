@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160303055045) do
   create_table "posts", force: :cascade do |t|
     t.string  "title",   limit: 255
     t.text    "content", limit: 65535
+    t.integer "count",   limit: 4,     default: 0
     t.integer "user_id", limit: 4
   end
 

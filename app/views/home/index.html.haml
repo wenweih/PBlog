@@ -1,6 +1,7 @@
 - title "首页"
 - meta_tag :description,"黄文威 Rubyist"
 - meta_tag :keywords,"博客"
+= javascript_include_tag 'typed'
 -cache 'home-index' do
   %main.pusher
     .masthead.segment
@@ -24,7 +25,7 @@
 
 :coffee
   $('.person-description').typed
-    strings: [ '专注于 Web 全栈开发，致力于设计用户体验良好的网页' ]
+    strings: [ '专注于 Web 全栈开发。' ]
     loop: true
     showCursor: true
     startDelay: 500

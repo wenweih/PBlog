@@ -1,0 +1,21 @@
+= form_for([namespace, page.resource], html: { class: "form" }) do |f|
+  - if page.resource.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(page.resource.errors.count, "error")
+        prohibited this #{page.resource_name} from being saved:
+      %ul
+        - page.resource.errors.full_messages.each do |message|
+          %li= message
+  %fieldset.form-group
+    - page.attributes.each do |attribute|
+      - if attribute.name == 'title'
+        .post-title
+          = f.text_field :title
+        -# = render_field attribute, f: f
+      - else attribute.name == 'content'
+        .post-content
+          = render "application/editor", f: f
+
+  .form-actions
+    = f.submit
