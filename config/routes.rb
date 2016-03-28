@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  post 'upload' => 'file_attach#post_image'
+
   namespace :admin do
     resources :users
     resources :posts

@@ -11,7 +11,10 @@
               '|', 'ol', 'ul', '|', 'blockquote','code','table','link','image','hr','indent',
               'outdent','alignment','markdown', 'fullscreen'],
     upload: {
-      url: '/upload_file',
+      url: '/upload',
+      params: {
+        "authenticity_token": "#{form_authenticity_token.to_s}"
+      },
       fileKey: 'upload_file',
       connectionCount: 3,
       leaveConfirm: 'Uploading is in progress, are you sure to leave this page?'

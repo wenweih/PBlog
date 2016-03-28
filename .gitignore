@@ -35,3 +35,4 @@ bower.json
 # Ignore pow environment settings
 .powenv
 .sass-cache
+public/uploads
