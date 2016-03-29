@@ -16,6 +16,7 @@
       - else attribute.name == 'content'
         .post-content
           = render "application/editor", f: f
+  = f.text_field :tag_list
 
   .form-actions
     = f.submit
