@@ -8,7 +8,7 @@
       .ui.text.container
         %h1.ui.inverted.header
           %span.person-title
-            黄文威
+            Wenwei Huang
           %div.typedjs
             %span.person-description
         .ui.fluid.horizontal.list
@@ -16,6 +16,14 @@
             = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
           .item
             = link_to "简  历","javascript:void(0)",class:'large ui inverted button'
+    .post-list.segment
+      .ui.grid.container
+        .one.wide.column
+        .ten.wide.column
+          = render 'post'
+        .four.wide.column
+          = render 'experence'
+        .one.wide.column
     .brief-itro.segment
       .ui.container
         %h2.ui.header

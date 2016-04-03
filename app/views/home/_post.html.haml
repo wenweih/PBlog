@@ -1,0 +1,7 @@
+.post-list-index
+  %section.main
+    %h4.ui.header.home-posts-title 最新文章
+    .ui.list-post-list
+      - @posts.each do |p|
+        .item
+          = link_to "#{p.title}",post_path(p)

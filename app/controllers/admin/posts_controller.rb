@@ -9,6 +9,7 @@ module Admin
     # end
     def update
       if requested_resource.update(resource_params)
+        requested_resource.update_attribute(params[:friend_url]) if requested_resource.friend_url_changed?
         requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
         redirect_to(
           admin_posts_path,
@@ -35,6 +36,10 @@ module Admin
         }
      end
    end
+
+   def find_resource(param)
+      resource_class.find_by_slug(param)
+    end
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
     #   User.find_by!(slug: param)
@@ -44,7 +49,7 @@ module Admin
     # for more information
 
     def resource_params
-      params.require(:post).permit(:title, :content, :tag_list)
+      params.require(:post).permit(:title, :content, :tag_list, :friend_url)
     end
 
   end

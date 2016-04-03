@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post 'upload' => 'file_attach#post_image'
 
+  resources :post, only: [:index,:show]
+
   namespace :admin do
     resources :users
     resources :posts

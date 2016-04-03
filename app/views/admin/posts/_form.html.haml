@@ -11,12 +11,13 @@
     - page.attributes.each do |attribute|
       - if attribute.name == 'title'
         .post-title
-          = f.text_field :title
+          = f.text_field :title,placeholder:"title"
         -# = render_field attribute, f: f
       - else attribute.name == 'content'
         .post-content
           = render "application/editor", f: f
-  = f.text_field :tag_list
+  = f.text_field :tag_list,placeholder:"tag_list,spile with ,"
+  = f.text_field :friend_url,placeholder: "friendly_url"
 
   .form-actions
     = f.submit
