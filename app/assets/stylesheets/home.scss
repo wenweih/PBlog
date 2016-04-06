@@ -63,6 +63,17 @@
       .home-posts-title{
         color: #999aa1;
       }
+      .list-post-list{
+        .post-article{
+          .override-simditor{
+            border: none !important
+          }
+          .override-simditor-body{
+            padding: 0;
+            min-height: 0;
+          }
+        }
+      }
     }
   }
 }

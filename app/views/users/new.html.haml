@@ -1,4 +1,5 @@
 - title "注册"
+= stylesheet_link_tag 'clearance'
 = form_for @user,:html=>{class:'ui large form'} do |form|
   .ui.stacked.segment
     = render partial: '/users/form', object: form

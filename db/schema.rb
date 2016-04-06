@@ -31,12 +31,14 @@ ActiveRecord::Schema.define(version: 20160303055045) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string  "title",      limit: 255
-    t.string  "friend_url", limit: 255
-    t.text    "content",    limit: 65535
-    t.integer "count",      limit: 4,     default: 0
-    t.string  "slug",       limit: 255
-    t.integer "user_id",    limit: 4
+    t.string   "title",      limit: 255
+    t.string   "friend_url", limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "count",      limit: 4,     default: 0
+    t.string   "slug",       limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree

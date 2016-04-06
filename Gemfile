@@ -54,6 +54,8 @@ gem 'acts_as_commentable_with_threading'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem "html_truncator", "~>0.2"
+
 gem "storytime"
 
 #cache

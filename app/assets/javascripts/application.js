@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.timeago
+//= require jquery.timeago.zh-CN
 //= require app
+
+jQuery(document).ready(function() {
+   $("time.timeago").timeago();
+ });

@@ -7,6 +7,7 @@ class CreatePost < ActiveRecord::Migration
       t.integer :count,default:0
       t.string :slug,index: { unique: true}
       t.belongs_to :user,index:true
+      t.timestamps
     end
   end
 end

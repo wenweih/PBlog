@@ -1,7 +1,12 @@
-.post-list-index
-  %section.main
-    %h4.ui.header.home-posts-title 最新文章
-    .ui.list-post-list
-      - @posts.each do |p|
-        .item
-          = link_to "#{p.title}",post_path(p)
+%section.main.post-list-index
+  %h4.ui.header.home-posts-title 最新文章
+  .ui.list-post-list
+    - @posts.each do |p|
+      %article.item.post-article
+        %h2.post-item-title.header
+          = link_to "#{p.title}",post_path(p),class:'post-link'
+        %time.timeago{datetime: "#{p.created_at.strftime('%Y-%m-%d %H:%M')}"}
+        .simditor.override-simditor
+          .post-item-desc.description.simditor-body.override-simditor-body
+            = raw p.sub_content
+      .ui.divider

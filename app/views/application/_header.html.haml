@@ -12,5 +12,3 @@
         - if signed_in?
           = current_user.email
           = button_to "退出",sign_out_path,method: :delete
-        - else
-          = link_to "登录",sign_in_path
