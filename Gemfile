@@ -58,6 +58,8 @@ gem "html_truncator", "~>0.2"
 
 gem "storytime"
 
+gem 'annotate' #Annotate Rails classes with schema and routes info
+
 #cache
 gem 'redis', '~>3.2' #A Ruby client library for Redis
 gem 'redis-namespace' #This gem adds a Redis::Namespace class which can be used to namespace Redis keys.

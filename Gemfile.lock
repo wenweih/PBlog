@@ -65,6 +65,9 @@ GEM
       rails (~> 4.2)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
@@ -500,6 +503,7 @@ DEPENDENCIES
   acts_as_commentable_with_threading
   acts_as_votable (~> 0.10.0)
   administrate (~> 0.1.4)
+  annotate
   autoprefixer-rails
   bourbon
   browser
