@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303055045) do
+ActiveRecord::Schema.define(version: 20160408031312) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id",   limit: 4
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20160303055045) do
     t.string   "title",      limit: 255
     t.string   "friend_url", limit: 255
     t.text     "content",    limit: 65535
-    t.integer  "count",      limit: 4,     default: 0
     t.string   "slug",       limit: 255
     t.integer  "user_id",    limit: 4
     t.datetime "created_at"

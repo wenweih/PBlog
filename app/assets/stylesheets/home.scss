@@ -65,12 +65,19 @@
       }
       .list-post-list{
         .post-article{
+          .post-meta{
+            color: #999aa1 !important;
+          }
           .override-simditor{
             border: none !important
           }
           .override-simditor-body{
+
             padding: 0;
             min-height: 0;
+          }
+          .override-simditor-body p{
+            color: #66676e;
           }
         }
       }

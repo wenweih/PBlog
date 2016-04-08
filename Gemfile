@@ -59,11 +59,11 @@ gem "html_truncator", "~>0.2"
 gem "storytime"
 
 #cache
-gem 'redis-rails' #Redis stores for Rack::Cache
-#This gem adds a Redis::Namespace class which can be used to namespace Redis keys.
-gem 'redis-namespace'
 gem 'redis', '~>3.2' #A Ruby client library for Redis
-# gem 'redis', '~>3.2'
+gem 'redis-namespace' #This gem adds a Redis::Namespace class which can be used to namespace Redis keys.
+gem 'redis-rails' #Redis stores for Rack::Cache
+gem 'redis-objects' #将一些数据放入 Redis
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
