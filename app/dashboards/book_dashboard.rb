@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class PostDashboard < Administrate::BaseDashboard
+class BookDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -11,8 +11,10 @@ class PostDashboard < Administrate::BaseDashboard
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    title: Field::String,
-    content: Field::Text,
+    name: Field::String,
+    author: Field::String,
+    description: Field::Text,
+    recommand: Field::String
   }
 
   # COLLECTION_ATTRIBUTES
@@ -24,7 +26,7 @@ class PostDashboard < Administrate::BaseDashboard
     :id,
     :created_at,
     :updated_at,
-    :title,
+    :name,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -33,22 +35,24 @@ class PostDashboard < Administrate::BaseDashboard
     :id,
     :created_at,
     :updated_at,
-    :title,
-    :content,
+    :name,
+    :description,
+    :recommand,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :title,
-    :content,
+    :name,
+    :description,
+    :recommand,
   ]
 
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(image)
+    "Image ##{image.id}"
+  end
 end

@@ -1,0 +1,23 @@
+= form_for([namespace, page.resource], html: { class: "form" }) do |f|
+  - if page.resource.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(page.resource.errors.count, "error")
+        prohibited this #{page.resource_name} from being saved:
+      %ul
+        - page.resource.errors.full_messages.each do |message|
+          %li= message
+  %fieldset.form-group
+    - page.attributes.each do |attribute|
+      - if attribute.name == 'name'
+        .book-name
+          = f.text_field :name,placeholder:"书籍名称"
+        -# = render_field attribute, f: f
+      - elsif attribute.name == 'description'
+        .book-description
+          = f.text_field :description,placeholder:"书籍描述"
+      - elsif attribute.name == 'recommand'
+        .book-recommand
+          = f.text_field :recommand, placeholder:"推荐说明"
+  .form-actions
+    = f.submit
