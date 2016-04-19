@@ -1,0 +1,20 @@
+= javascript_include_tag 'dropzone'
+= stylesheet_link_tag 'dropzone'
+
+.dropzone-image
+  %form{id:"my-awesome-dropzone",action:"#{upload_path}",class:"dropzone"}
+
+:javascript
+  Dropzone.options.myAwesomeDropzone = {
+    paramName: "upload_file",
+    dictDefaultMessage: "重新上传会书籍封面覆盖并删除原来已经上传的图片",
+    init: function() {
+      this.on("sending", function(file,xhr){
+        $.rails.CSRFProtection(xhr);
+      });
+      this.on("success",function(file,response){
+        var tmp = $("#book_book_cover_url").val();
+        $("input[name='book[book_cover_url]']").val(response.file_path);
+      });
+    }
+  };

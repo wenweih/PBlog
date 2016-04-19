@@ -14,7 +14,8 @@ class BookDashboard < Administrate::BaseDashboard
     name: Field::String,
     author: Field::String,
     description: Field::Text,
-    recommand: Field::String
+    recommand: Field::String,
+    image: Field::HasOne
   }
 
   # COLLECTION_ATTRIBUTES
@@ -47,6 +48,7 @@ class BookDashboard < Administrate::BaseDashboard
     :name,
     :description,
     :recommand,
+    :image
   ]
 
   # Overwrite this method to customize how users are displayed

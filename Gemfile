@@ -60,6 +60,8 @@ gem "storytime"
 
 gem 'annotate' #Annotate Rails classes with schema and routes info
 
+gem "rails_best_practices"
+
 #cache
 gem 'redis', '~>3.2' #A Ruby client library for Redis
 gem 'redis-namespace' #This gem adds a Redis::Namespace class which can be used to namespace Redis keys.

@@ -1,4 +1,6 @@
-= form_for([namespace, page.resource], html: { class: "form" }) do |f|
+- url = @book.new_record? ? admin_books_path : admin_book_path(@book)
+
+= form_for(@book,:url=> url, :html=> { class: "form book-form" }) do |f|
   - if page.resource.errors.any?
     #error_explanation
       %h2
@@ -8,16 +10,25 @@
         - page.resource.errors.full_messages.each do |message|
           %li= message
   %fieldset.form-group
+    = f.hidden_field :book_cover_url
     - page.attributes.each do |attribute|
       - if attribute.name == 'name'
         .book-name
           = f.text_field :name,placeholder:"书籍名称"
-        -# = render_field attribute, f: f
       - elsif attribute.name == 'description'
         .book-description
           = f.text_field :description,placeholder:"书籍描述"
       - elsif attribute.name == 'recommand'
         .book-recommand
           = f.text_field :recommand, placeholder:"推荐说明"
-  .form-actions
-    = f.submit
+      - elsif attribute.name == 'image'
+        .book-cover
+= render "application/dropzone"
+.form-actions
+  = button_tag "提交表单", class: 'btn-book-new-edit'
+
+:javascript
+
+  $(".btn-book-new-edit").on('click',function(){
+    $(".book-form").submit();
+  });

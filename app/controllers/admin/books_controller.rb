@@ -9,11 +9,10 @@ module Admin
     # end
     def update
       if requested_resource.update(resource_params)
-        requested_resource.update_attribute(params[:friend_url]) if requested_resource.friend_url_changed?
-        requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
+        Mypage::AppLogger.info "requested_resource:#{requested_resource.name}"
         redirect_to(
-          admin_posts_path,
-          notice: "#{requested_resource.title}更新成功",
+          admin_books_path,
+          notice: "#{requested_resource.name}更新成功",
         )
       else
         render :edit, locals: {
@@ -22,12 +21,25 @@ module Admin
       end
     end
 
+    def new
+      @book = Book.new
+      render locals: {
+        page: Administrate::Page::Form.new(dashboard, resource_class.new),
+      }
+    end
+
+    def edit
+      @book = requested_resource
+      render locals: {
+        page: Administrate::Page::Form.new(dashboard, requested_resource),
+      }
+    end
+
     def create
       resource = resource_class.new(resource_params)
       if resource.save
-        requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
         redirect_to(
-          admin_posts_path,
+          admin_books_path,
           notice: translate_with_resource("create.success"),
         )
       else
@@ -38,7 +50,7 @@ module Admin
    end
 
    def find_resource(param)
-      resource_class.find_by_slug(param)
+      resource_class.find(param)
     end
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
@@ -49,7 +61,7 @@ module Admin
     # for more information
 
     def resource_params
-      params.require(:book).permit(:name, :author, :description, :recommand)
+      params.require(:book).permit(:name, :author, :description, :recommand, :book_cover_url)
     end
 
   end
