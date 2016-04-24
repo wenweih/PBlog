@@ -55,10 +55,11 @@
   }
 }
 .post-list{
-  margin-top: 10vh;
+  margin-top: 10vh !important;
+  border-bottom: none !important;
 }
 .post-list.segment{
-  .ten.wide.column{
+  .twelve.wide.column{
     .post-list-index{
       .home-posts-title{
         color: #999aa1;
@@ -86,18 +87,22 @@
     }
   }
 }
-.brief-itro.segment{
-  height:40em;
-  @include background;
-  .ui.container{
-    max-width: 600px !important;
-    .intro-title{
-      @extend %title;
-      color: rgba(0,0,0,.87) !important;
-    }
-    .intro-content{
-      color: rgba(0,0,0,.87) !important;
-      @extend %description;
+.brief-itro{
+  min-height: 100vh;
+  background-attachment: fixed;
+  opacity: 0.85;
+  @include background-image(url("/brif-info.jpg"));
+  background-size: cover;
+  .self-info{
+    margin-top: 30vh;
+  }
+  .brief-itro-desc{
+    color: #fff;
+    background: none;
+    border: none;
+    box-shadow: none;
+    &>.item{
+      margin-left: 2rem;
     }
   }
 }

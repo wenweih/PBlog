@@ -16,20 +16,41 @@
             = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
           .item
             = link_to "简  历","javascript:void(0)",class:'large ui inverted button'
-    .post-list.segment
-      .ui.grid.container
+    .post-list.ui.stripe.vertical.segment
+      .ui.stackable.very.relaxed.grid.container
+        .row
+          .twelve.wide.column
+            = render 'post'
+          .four.wide.column
+            = render 'experence'
         .one.wide.column
-        .ten.wide.column
-          = render 'post'
-        .four.wide.column
-          = render 'experence'
-        .one.wide.column
-    .brief-itro.segment
-      .ui.container
-        %h2.ui.header
-          %span.intro-title 快速了解我
-          %span.intro-content
-            = SettingsLogic.admin.intro_content
+    .brief-itro.ui.stripe.community.vertical
+      .ui.three.column.center.aligned.very.relaxed.stackable.grid.container
+        .row.self-info
+          .column
+            %h2.ui.header
+              = image_tag("/idnetity.gif",class:'ui avatar small image')
+            .ui.list.segment.brief-itro-desc.left.aligned
+              .item
+                xxxxxxxxxxxxllllllhjjj
+              .item
+                yyyfds
+          .column
+            %h2.ui.header
+              = image_tag("/work.gif",class:'ui avatar small image')
+            .ui.list.segment.brief-itro-desc.left.aligned
+              .item
+                xxxxxxxxxxxxllllllhjjj
+              .item
+                yyyfdsfdsfdsfdfdsf
+          .column
+            %h2.ui.header
+              = image_tag("/dream.gif",class:'ui avatar small image')
+            .ui.list.segment.brief-itro-desc.left.aligned
+              .item
+                xxxxxxxxxxxxllllllhjjj
+              .item
+                yyyfdsfdsfdsfdfdsf
 
 :coffee
   $('.person-description').typed
