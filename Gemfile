@@ -56,8 +56,6 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem "html_truncator", "~>0.2"
 
-gem "storytime"
-
 gem 'annotate' #Annotate Rails classes with schema and routes info
 
 gem "rails_best_practices"

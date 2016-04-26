@@ -15,6 +15,9 @@
       - if attribute.name == 'name'
         .book-name
           = f.text_field :name,placeholder:"书籍名称"
+      - elsif attribute.name == 'author'
+        .book-author
+          = f.text_field :author,placeholder:"作者"
       - elsif attribute.name == 'description'
         .book-description
           = f.text_field :description,placeholder:"书籍描述"

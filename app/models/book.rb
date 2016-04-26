@@ -20,6 +20,7 @@ class Book < ActiveRecord::Base
   validates :name, presence: true
   validates :recommand, presence: true
   validates :description, presence: true
+  validates :author, presence: true
 
   after_create do
     cover = Image.create(url: self.book_cover_url)

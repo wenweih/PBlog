@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.timeago
+//= require semantic
 //= require jquery.timeago.zh-CN
 //= require app
 

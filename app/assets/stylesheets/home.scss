@@ -1,3 +1,4 @@
+$home-title-color: #999aa1;
 @mixin background{
   @extend %textaligncenter;
   @include animation(backgroundScroll 5.0s alternate infinite);
@@ -62,7 +63,7 @@
   .twelve.wide.column{
     .post-list-index{
       .home-posts-title{
-        color: #999aa1;
+        color: $home-title-color;
       }
       .list-post-list{
         .post-article{
@@ -85,6 +86,17 @@
         }
       }
     }
+  }
+}
+.book-info{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 116px;
+  padding-bottom: 0 !important;
+}
+.index-sidebar{
+  &>.home-book-title{
+    color: $home-title-color;
   }
 }
 .brief-itro{

@@ -28,6 +28,7 @@ class BookDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :name,
+    :author,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,6 +40,7 @@ class BookDashboard < Administrate::BaseDashboard
     :name,
     :description,
     :recommand,
+    :author,
   ]
 
   # FORM_ATTRIBUTES
@@ -48,7 +50,8 @@ class BookDashboard < Administrate::BaseDashboard
     :name,
     :description,
     :recommand,
-    :image
+    :image,
+    :author,
   ]
 
   # Overwrite this method to customize how users are displayed
