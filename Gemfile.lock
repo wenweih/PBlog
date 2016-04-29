@@ -80,7 +80,7 @@ GEM
       thor (~> 0.19)
     browser (2.0.3)
     builder (3.2.2)
-    byebug (8.2.4)
+    byebug (8.2.5)
     clearance (1.13.0)
       bcrypt
       email_validator (~> 1.4)

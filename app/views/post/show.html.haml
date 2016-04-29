@@ -1,3 +1,14 @@
 - title "#{@post.title}"
 - meta_tag :description,"#{@post.title}"
-- meta_tag :keywords,"#{@post.title}"
+- meta_tag :keywords,"#{@post.title},#{@post.tag_list}"
+
+.ui.vertical.stripe.post-show.segment
+  .stackable.very.relaxed.ui.grid.container
+    .row
+      .eleven.wide.column
+        %section.main
+          %article.post-detail
+            %header
+              = @post.title
+      .five.wide.column
+        %aside.sidebar

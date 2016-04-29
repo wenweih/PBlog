@@ -16,8 +16,14 @@
 //= require jquery.timeago
 //= require semantic
 //= require jquery.timeago.zh-CN
+//= require headroom
+//= require jQuery.headroom
 //= require app
 
-jQuery(document).ready(function() {
-   $("time.timeago").timeago();
- });
+document.addEventListener("turbolinks:load", function() {
+  $("#header").headroom();
+  $("time.timeago").timeago();
+})
+// jQuery(document).ready(function() {
+//
+//  });

@@ -1,9 +1,9 @@
 - title "首页"
 - meta_tag :description,"黄文威 Rubyist"
-- meta_tag :keywords,"博客"
+- meta_tag :keywords,"博客,个人主页,全栈工程师"
 = javascript_include_tag 'typed'
 -cache 'home-index' do
-  %main.pusher
+  %main
     .masthead.segment
       .ui.text.container
         %h1.ui.inverted.header
@@ -63,8 +63,6 @@
                 慎言慎行，思考以求自我认知、进化
               .item
                 \......
-
-
 :coffee
   $('.person-description').typed
     strings: [ '专注于 Web 全栈开发。' ]
