@@ -33,7 +33,7 @@ $home-title-color: #999aa1;
   height: 90vh;
 }
 .masthead.segment{
-  @include background-image(url("/bg-img.jpg"), linear-gradient(white 0, white 50%, transparent 50%));
+  @include background-image(url("/bg-img.jpg"));
   @include background;
   background-attachment: fixed;
   opacity: 0.85;

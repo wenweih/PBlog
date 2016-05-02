@@ -5,6 +5,8 @@
     黄文威
   %meta{name:'Description',content:"#{yield_meta_tag(:description, 'Default description')}"}
   %meta{name:'Keywords',content:"#{yield_meta_tag(:keywords, 'defaults,ruby,rails')}"}
+  - if controller_name == 'home' && action_name == 'index'
+    %meta{ :name => 'turbolinks-cache-control', :content => 'no-cache'}
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags

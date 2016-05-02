@@ -1,14 +1,16 @@
 -cache 'header' do
   %header#header
-    .ui.grid.menu-index
-      .five.wide.column
-      .six.wide.column.main-menu-index.center.aligned
-        .ui.horizontal.list
-          =link_to "博客", post_index_path, class:'item'
-          =link_to "简历","#",class:'item'
-          =link_to "项目","#",class:'item'
-          =link_to "联系","#",class:'item'
-      .five.wide.column
-        - if signed_in?
-          = current_user.email
-          = button_to "退出",sign_out_path,method: :delete
+    .ui.vertical.center.aligned.segment.header-menu
+      .ui.container
+        .ui.large.secondary.menu
+          %a.toc.item
+            %i.sidebar.icon
+          = link_to '首页', root_path, class:'active item'
+          = link_to "博客", post_index_path, class:'item'
+          = link_to "简历","#",class:'item'
+          = link_to "项目","#",class:'item'
+          = link_to "联系","#",class:'item'
+          .right.item
+            - if signed_in?
+              = current_user.email
+              = button_to '退出', sign_out_path, method: :delete, class: 'ui inverted button'

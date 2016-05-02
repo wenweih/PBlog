@@ -17,13 +17,12 @@
 //= require semantic
 //= require jquery.timeago.zh-CN
 //= require headroom
+//= require typed
 //= require jQuery.headroom
 //= require app
 
 document.addEventListener("turbolinks:load", function() {
   $("#header").headroom();
   $("time.timeago").timeago();
-})
-// jQuery(document).ready(function() {
-//
-//  });
+  $('.ui.sidebar').sidebar('attach events', '.toc.item');
+});
