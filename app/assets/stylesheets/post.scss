@@ -1,0 +1,13 @@
+.post-show{
+  margin-top: 100px;
+  .row{
+    &>.eleven.wide.column{
+      .post-detail{
+        @extend %simditor-override;
+      }
+    }
+    &>.five.wide.column{
+
+    }
+  }
+}
