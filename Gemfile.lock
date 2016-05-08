@@ -83,7 +83,7 @@ GEM
     browser (2.0.3)
     builder (3.2.2)
     byebug (8.2.5)
-    clearance (1.13.0)
+    clearance (1.14.0)
       bcrypt
       email_validator (~> 1.4)
       rails (>= 3.1)
@@ -96,7 +96,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    concurrent-ruby (1.0.1)
+    concurrent-ruby (1.0.2)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     debug_inspector (0.0.2)
@@ -159,7 +159,7 @@ GEM
     minitest (5.8.4)
     momentjs-rails (2.11.1)
       railties (>= 3.1)
-    multi_json (1.11.3)
+    multi_json (1.12.0)
     mysql2 (0.4.4)
     neat (1.7.4)
       bourbon (>= 4.0)
@@ -246,7 +246,7 @@ GEM
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     ruby-progressbar (1.8.0)
-    ruby_parser (3.8.1)
+    ruby_parser (3.8.2)
       sexp_processor (~> 4.1)
     sass (3.4.22)
     sass-rails (5.0.4)
