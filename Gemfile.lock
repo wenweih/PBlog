@@ -80,7 +80,7 @@ GEM
     bourbon (4.2.7)
       sass (~> 3.4)
       thor (~> 0.19)
-    browser (2.0.3)
+    browser (2.1.0)
     builder (3.2.2)
     byebug (8.2.5)
     clearance (1.14.0)

@@ -6,6 +6,9 @@ $home-title-color: #999aa1;
 }
 
 %title{
+  @media only screen and (max-width: 700px) {
+    font-size: 30px;
+  }
   color: rgba(255, 255, 255, 1);
   display: block;
   font-size: 1.75em;
