@@ -29,39 +29,39 @@
         .row.self-info
           .column
             %h2.ui.header
-              = image_tag("/idnetity.gif",class:'ui avatar small image')
-            .ui.list.segment.brief-itro-desc.left.aligned
-              .item
+              = image_tag("/idnetity.gif",class:'self-info-img ui avatar small image')
+            .brief-itro-desc
+              %p
                 我叫黄文威
-              .item
+              %p
                 92年生于广东, 15年毕业于广州某所高校
-              .item
+              %p
                 喜欢看书，跑步，业余时间还会烧菜做饭
-              .item
+              %p
                 我觉得自己很 nice, 性情温和，人畜无害
           .column
             %h2.ui.header
-              = image_tag("/work.gif",class:'ui avatar small image')
-            .ui.list.segment.brief-itro-desc.left.aligned
-              .item
+              = image_tag("/work.gif",class:'self-info-img ui avatar small image')
+            .brief-itro-desc
+              %p
                 我是一名软件工程师
-              .item
+              %p
                 目标成为一名合格的全栈工程师
-              .item
+              %p
                 目前供职于 oschina , 负责码云产品
-              .item
+              %p
                 熟悉 Ruby/Rails js/css LINUX Semantic-Ui
           .column
             %h2.ui.header
-              = image_tag("/dream.gif",class:'ui avatar small image')
-            .ui.list.segment.brief-itro-desc.left.aligned
-              .item
+              = image_tag("/dream.gif",class:'self-info-img ui avatar small image')
+            .brief-itro-desc
+              %p
                 没梦想，好好活着算是梦想吗
-              .item
+              %p
                 敬畏未知，看书以求多些认知外界
-              .item
+              %p
                 慎言慎行，思考以求自我认知、进化
-              .item
+              %p
                 \......
 :coffee
   document.addEventListener 'turbolinks:load', ->

@@ -99,15 +99,19 @@ $home-title-color: #999aa1;
   @include background-image(url("/brif-info.jpg"));
   background-size: cover;
   .self-info{
-    margin-top: 30vh;
-  }
-  .brief-itro-desc{
-    color: #fff;
-    background: none;
-    border: none;
-    box-shadow: none;
-    &>.item{
-      margin-left: 2rem;
+    margin-top: 25vh;
+    &>.column{
+      &>.ui.header{
+        @media only screen and (max-width: 700px) {
+          .self-info-img{
+            width: 100px;
+            height: auto;
+          }
+        }
+      }
+      &>.brief-itro-desc{
+        color: #fff;
+      }
     }
   }
 }
