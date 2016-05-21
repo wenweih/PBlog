@@ -2,10 +2,10 @@
 = stylesheet_link_tag 'editor'
 .simditor
   = f.text_area :content,placeholder:'content'
-
 :javascript
+  var id = $('textarea').attr("id");
   var editor = new Simditor({
-    textarea: $('#post_content'),
+    textarea: $('#'+id),
     markdown: false,
     toolbar: ['title','bold', 'italic', 'underline','strikethrough','fontScale', 'color',
               '|', 'ol', 'ul', '|', 'blockquote','code','table','link','image','hr','indent',

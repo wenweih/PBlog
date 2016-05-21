@@ -1,0 +1,8 @@
+%body
+  - content_for(:title) { "Edit #{page.page_title}" }
+  %header.header
+    %h1.header__heading
+      修改文博客章
+    .header__actions
+      = link_to "Show #{page.page_title}", [namespace, page.resource], class: "button"
+  = render "form", page: page

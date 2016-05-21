@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   resources :post, only: [:index,:show]
 
   namespace :admin do
+    root to: "users#index"
     resources :users
     resources :posts
     resources :books
-    root to: "users#index"
+    resources :blog_posts
+    resources :book_reviews
+    resources :resume_posts
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

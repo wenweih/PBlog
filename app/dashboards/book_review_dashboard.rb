@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class PostDashboard < Administrate::BaseDashboard
+class BookReviewDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -13,7 +13,6 @@ class PostDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     title: Field::String,
     content: Field::Text,
-    type: Field::String
   }
 
   # COLLECTION_ATTRIBUTES

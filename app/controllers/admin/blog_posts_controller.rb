@@ -1,5 +1,5 @@
 module Admin
-  class BooksController < Admin::ApplicationController
+  class BlogPostsController < Admin::ApplicationController
     # To customize the behavior of this controller,
     # simply overwrite any of the RESTful actions. For example:
     #
@@ -9,9 +9,11 @@ module Admin
     # end
     def update
       if requested_resource.update(resource_params)
+        requested_resource.update_attribute(params[:friend_url]) if requested_resource.friend_url_changed?
+        requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
         redirect_to(
-          admin_books_path,
-          notice: "#{requested_resource.name}更新成功",
+          admin_posts_path,
+          notice: "#{requested_resource.title}更新成功",
         )
       else
         render :edit, locals: {
@@ -20,25 +22,14 @@ module Admin
       end
     end
 
-    def new
-      @book = Book.new
-      render locals: {
-        page: Administrate::Page::Form.new(dashboard, resource_class.new),
-      }
+    def show
     end
-
-    def edit
-      @book = requested_resource
-      render locals: {
-        page: Administrate::Page::Form.new(dashboard, requested_resource),
-      }
-    end
-
     def create
       resource = resource_class.new(resource_params)
       if resource.save
+        requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
         redirect_to(
-          admin_books_path,
+          admin_posts_path,
           notice: translate_with_resource("create.success"),
         )
       else
@@ -49,7 +40,7 @@ module Admin
    end
 
    def find_resource(param)
-      resource_class.find(param)
+      resource_class.find_by_slug(param)
     end
     # Define a custom finder by overriding the `find_resource` method:
     # def find_resource(param)
@@ -60,7 +51,7 @@ module Admin
     # for more information
 
     def resource_params
-      params.require(:book).permit(:name, :author, :description, :recommand, :book_cover_url)
+      params.require(:blog_post).permit(:title, :content, :tag_list, :friend_url)
     end
 
   end

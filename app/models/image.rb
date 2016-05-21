@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  url        :string(255)
-#  books_id   :integer
+#  book_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
