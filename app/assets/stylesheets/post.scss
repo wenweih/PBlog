@@ -1,13 +1,26 @@
 .post-show{
-  margin-top: 100px;
-  .row{
-    &>.eleven.wide.column{
-      .post-detail{
-        @extend %simditor-override;
-      }
+  &>.post-pic{
+    @include background-image(url("/post-detail-pic.png"));
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.85;
+    min-height: 35rem;
+    @media only screen and (max-width: 700px) {
+      background-size: contain;
+      background-repeat: no-repeat;
+      min-height: 15rem;
+      background-position: right 73px;
     }
-    &>.five.wide.column{
-
+  }
+  &>.post-main{
+    margin-top: 3rem;
+    &>.row{
+      &>.eleven.wide.column{
+      }
+      &>.five.wide.column{
+      }
     }
   }
 }

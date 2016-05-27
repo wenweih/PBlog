@@ -8,6 +8,7 @@ $home-title-color: #999aa1;
 %title{
   @media only screen and (max-width: 700px) {
     font-size: 30px;
+    margin-top: 65px;
   }
   color: rgba(255, 255, 255, 1);
   display: block;
@@ -51,6 +52,7 @@ $home-title-color: #999aa1;
     .person-description{
       white-space:pre;
       display:inline;
+      white-space: pre;
       @extend %description;
     }
     .ui.fluid.horizontal.list{
@@ -75,7 +77,6 @@ $home-title-color: #999aa1;
           .post-meta{
             color: #999aa1 !important;
           }
-          @extend %simditor-override;
         }
       }
     }

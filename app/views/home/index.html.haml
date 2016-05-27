@@ -1,7 +1,6 @@
 - title "首页"
 - meta_tag :description,"黄文威 Rubyist"
 - meta_tag :keywords,"博客,个人主页,全栈工程师"
--# = javascript_include_tag 'typed', 'data-turbolinks-track' => true
 -cache 'home-index' do
   %main
     .masthead.segment
@@ -10,7 +9,7 @@
           %span.person-title
             Wenwei Huang
           %div.typedjs
-            %span.person-description
+            %p.person-description
         .ui.fluid.horizontal.list
           .item
             = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
@@ -63,15 +62,3 @@
                 慎言慎行，思考以求自我认知、进化
               %p
                 \......
-:coffee
-  document.addEventListener 'turbolinks:load', ->
-    $('.person-description').typed
-      strings: [ '专注于 Web 全栈开发。' ]
-      loop: true
-      showCursor: true
-      startDelay: 500
-      backSpeed: 10
-      backDelay: 1500
-      typeSpeed: 80
-      contentType: 'html'
-    return

@@ -1,14 +1,10 @@
-- content =
 %h1.ui.header.post-header
   = post.title
-.simditor.override-simditor
-  .post-item-desc.description.simditor-body.override-simditor-body
-    .post-content
+.post-content
 :javascript
-  $('div.post-content').html($.parseHTML(decodeURI(gon.con)));
-  hljs.configure({
-    tabReplace: '  ', // 4 spaces
-    classPrefix: ''     // don't append class prefix
-                        // … other options aren't changed
+  document.addEventListener("turbolinks:load", function() {
+    $('div.post-content').html($.parseHTML(decodeURI(gon.con)));
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
   });
-  hljs.initHighlighting();
