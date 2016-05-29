@@ -1,6 +1,7 @@
 %h1.ui.header.post-header
   = post.title
-.post-content
+.simditor.override-simditor
+  .post-content.description.simditor-body.override-simditor-body
 :javascript
   document.addEventListener("turbolinks:load", function() {
     $('div.post-content').html($.parseHTML(decodeURI(gon.con)));

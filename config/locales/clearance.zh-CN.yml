@@ -1,0 +1,55 @@
+---
+zh-CN:
+  clearance:
+    models:
+      clearance_mailer:
+        change_password: 修改密码
+  clearance_mailer:
+    change_password:
+      closing: 如果该请求不是您发出的，请忽略这封邮件，同时您的账号密码也不会改变。
+      link_text: 修改我的账号密码
+      opening: 有人希望我们给您发送一封修改账号密码的邮件，如果不是，请忽略该邮件
+  flashes:
+    failure_after_create: 邮箱或密码输入不正确
+    failure_after_update: 密码不能为空
+    failure_when_forbidden: 请点击两次 URL 或者尝试提交表单
+      the form again.
+    failure_when_not_signed_in: 请登录
+  helpers:
+    label:
+      password:
+        email: 输入邮箱
+      password_reset:
+        password: 输入密码
+    submit:
+      password:
+        submit: 重置密码
+      password_reset:
+        submit: 保存密码
+      session:
+        submit: 登录
+      user:
+        create: 注册
+  layouts:
+    application:
+      sign_in: 登录
+      sign_out: 注册
+  passwords:
+    create:
+      description: 您将会接收到一封邮件，请按照邮件内容修改您的账号密码
+    edit:
+      description: 您的账号密码已经被重置，请输入新的账号密码。
+      title: 修改密码
+    new:
+      description: 请填写您的账号邮箱。
+      title: 重置密码
+  sessions:
+    form:
+      forgot_password: "忘记密码 ?"
+      sign_up: 注册
+    new:
+      title: 登录
+  users:
+    new:
+      sign_in: 登录
+      title: 注册

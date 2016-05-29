@@ -21,3 +21,6 @@
     },
     pasteImage: true
   });
+  $(".simditor-body > pre").each(function(i, block) {
+    hljs.highlightBlock(block);
+  });

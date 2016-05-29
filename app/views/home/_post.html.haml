@@ -8,8 +8,9 @@
         %p.post-meta
           发布于
           %time.timeago{datetime: "#{p.created_at.strftime('%Y-%m-%d %H:%M')}"}
-        .home-post-list
-          = p.sub_content.html_safe
+        .simditor.override-simditor
+          .post-item-desc.description.simditor-body.override-simditor-body
+            = raw p.sub_content
 :javascript
   document.addEventListener("turbolinks:load", function() {
     $('pre code').each(function(i, block) {

@@ -12,3 +12,15 @@
   align-items: center !important;
   justify-content: center !important;
 }
+%simditor-override{
+  .override-simditor{
+    border: none !important;
+    &>.override-simditor-body{
+      padding: 0;
+      min-height: 0;
+    }
+    &>.override-simditor-body p{
+      color: #66676e;
+    }
+  }
+}
