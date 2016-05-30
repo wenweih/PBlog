@@ -12,7 +12,6 @@
       - if attribute.name == 'title'
         .post-title
           = f.text_field :title,placeholder:"title"
-        -# = render_field attribute, f: f
       - else attribute.name == 'content'
         .post-content
           = render "application/editor", f: f
