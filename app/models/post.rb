@@ -18,6 +18,9 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   include Redis::Objects
 
+  attr_accessor :book_cover_url
+  has_one :image
+
   validates :title, presence: true
   validates :content, presence: true
   validates :friend_url,presence: true,uniqueness: true
@@ -27,6 +30,23 @@ class Post < ActiveRecord::Base
 
   acts_as_taggable_on :tags
   friendly_id :friend_url, :use => :slugged
+
+  after_create do
+    cover = Image.create(url: self.book_cover_url)
+    self.image = cover
+  end
+
+  after_update do
+    unless self.book_cover_url == ""
+      if self.image.present? && self.image.url.present?
+        File.delete("#{Rails.root}/public#{self.image.url}")
+        self.image.update_columns(:url=> "#{self.book_cover_url}")
+      else
+        cover = Image.create(url: self.book_cover_url)
+        self.image = cover
+      end
+    end
+  end
 
   def content_html
     self.content

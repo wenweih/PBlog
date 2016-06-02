@@ -10,7 +10,7 @@
         - page.resource.errors.full_messages.each do |message|
           %li= message
   %fieldset.form-group
-    = f.hidden_field :book_cover_url
+    = f.hidden_field :book_cover_url,class:'url_cover'
     - page.attributes.each do |attribute|
       - if attribute.name == 'name'
         .book-name

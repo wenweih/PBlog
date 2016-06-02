@@ -29,7 +29,7 @@ class Book < ActiveRecord::Base
 
   after_update do
     unless self.book_cover_url == ""
-      File.delete("#{Rails.root}/public#{self.image.url}")
+      File.delete("#{Rails.root}/public#{self.image.url}") if self.image.present?
       self.image.update_columns(:url=> "#{self.book_cover_url}")
     end
   end

@@ -8,16 +8,20 @@
         - page.resource.errors.full_messages.each do |message|
           %li= message
   %fieldset.form-group
+    = f.hidden_field :book_cover_url,class:'url_cover'
     - page.attributes.each do |attribute|
       - if attribute.name == 'title'
         .post-title
           = f.text_field :title,placeholder:"title"
-        -# = render_field attribute, f: f
       - else attribute.name == 'content'
         .post-content
           = render "application/editor", f: f
   = f.text_field :tag_list,placeholder:"tag_list,spile with ,"
   = f.text_field :friend_url,placeholder: "friendly_url"
-
-  .form-actions
-    = f.submit
+= render "application/dropzone"
+.form-actions
+  = button_tag "提交表单", class: 'btn-book-new-edit'
+:javascript
+  $(".btn-book-new-edit").on('click',function(){
+    $(".form").submit();
+  });

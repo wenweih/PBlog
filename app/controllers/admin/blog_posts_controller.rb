@@ -51,7 +51,7 @@ module Admin
     # for more information
 
     def resource_params
-      params.require(:blog_post).permit(:title, :content, :tag_list, :friend_url)
+      params.require(:blog_post).permit(:title, :content, :tag_list, :friend_url, :book_cover_url)
     end
 
   end

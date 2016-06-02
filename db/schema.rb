@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519133504) do
+ActiveRecord::Schema.define(version: 20160602133138) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 20160519133504) do
     t.integer  "book_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "post_id",    limit: 4
   end
 
   add_index "images", ["book_id"], name: "index_images_on_book_id", using: :btree
+  add_index "images", ["post_id"], name: "index_images_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -109,4 +111,5 @@ ActiveRecord::Schema.define(version: 20160519133504) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "images", "posts"
 end

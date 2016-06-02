@@ -13,8 +13,7 @@
         $.rails.CSRFProtection(xhr);
       });
       this.on("success",function(file,response){
-        var tmp = $("#book_book_cover_url").val();
-        $("input[name='book[book_cover_url]']").val(response.file_path);
+        $(".url_cover").val(response.file_path);
       });
     }
   };

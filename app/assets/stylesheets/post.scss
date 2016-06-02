@@ -17,12 +17,10 @@
   &>.post-main{
     margin-top: 3rem;
     &>.row{
-      &>.eleven.wide.column{
+      &>.sixteen.wide.column{
         .post-detail{
           @extend %simditor-override;
         }
-      }
-      &>.five.wide.column{
       }
     }
   }
