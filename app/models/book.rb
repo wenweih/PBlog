@@ -15,7 +15,7 @@ class Book < ActiveRecord::Base
 
   attr_accessor :book_cover_url
 
-  has_one :image
+  has_one :image, dependent: :destroy
 
   validates :name, presence: true
   validates :recommand, presence: true

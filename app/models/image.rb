@@ -11,4 +11,9 @@
 
 class Image < ActiveRecord::Base
   belongs_to :book
+
+  before_destroy do
+    File.delete("#{Rails.root}/public/#{self.url}")
+  end
+
 end

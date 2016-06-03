@@ -4,7 +4,7 @@
   .post-content.description.simditor-body.override-simditor-body
 :javascript
   document.addEventListener("turbolinks:load", function() {
-    $('div.post-content').html($.parseHTML(decodeURI(gon.con)));
+    $('div.post-content').html($.parseHTML(gon.con));
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });

@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   include Redis::Objects
 
   attr_accessor :book_cover_url
-  has_one :image
+  has_one :image, dependent: :destroy
 
   validates :title, presence: true
   validates :content, presence: true
@@ -37,7 +37,7 @@ class Post < ActiveRecord::Base
   end
 
   after_update do
-    unless self.book_cover_url == ""
+    if self.book_cover_url != ""
       if self.image.present? && self.image.url.present?
         File.delete("#{Rails.root}/public#{self.image.url}")
         self.image.update_columns(:url=> "#{self.book_cover_url}")
