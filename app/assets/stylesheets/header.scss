@@ -1,5 +1,4 @@
 header {
-  border-bottom: 1px solid #DDD;
   &.headroom{
     will-change: transform;
     transition: transform 200ms linear;
@@ -10,7 +9,6 @@ header {
   &.headroom--unpinned {
     transform: translateY(-100%);
   }
-  background: #fff!important;
   min-height: 60px;
   position: fixed;
   top: 0;
@@ -23,7 +21,7 @@ header {
     }
     a {
       background:none !important;
-      color: #66676e !important;
+      color: #fff;
     }
     a.item:hover {
       background:none !important;

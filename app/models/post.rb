@@ -53,6 +53,6 @@ class Post < ActiveRecord::Base
   end
 
   def sub_content
-     HTML_Truncator.truncate(content_html, 300, length_in_chars: true)
+     HTML_Truncator.truncate(content_html, 100, length_in_chars: true)
    end
 end

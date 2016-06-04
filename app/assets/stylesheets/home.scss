@@ -34,7 +34,7 @@ $home-title-color: #999aa1;
   font-weight: bold;
 }
 .masthead{
-  height: 90vh;
+  height: 100vh;
 }
 .masthead.segment{
   @include background-image(url("/bg-img.jpg"));
@@ -61,8 +61,9 @@ $home-title-color: #999aa1;
   }
 }
 .post-list{
-  margin-top: 10vh !important;
+  padding-top: 5vh !important;
   border-bottom: none !important;
+  background: #f6f8f8 !important;
 }
 .post-list.segment{
   .twelve.wide.column{
@@ -93,6 +94,21 @@ $home-title-color: #999aa1;
   &>.home-book-title{
     color: $home-title-color;
   }
+  &>.home-tweet-title{
+    color: $home-title-color;
+  }
+  &.tweet-sidebar{
+    margin-top: 2rem;
+    &>.list-tweet{
+      &>.tweet-item{
+        &>.content{
+          &> a{
+            color: #666;
+          }
+        }
+      }
+    }
+  }
 }
 .brief-itro{
   min-height: 100vh;
@@ -100,6 +116,11 @@ $home-title-color: #999aa1;
   opacity: 0.85;
   @include background-image(url("/brif-info.jpg"));
   background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  &>.ui.grid{
+    margin-top: 0 !important;
+  }
   .self-info{
     margin-top: 25vh;
     &>.column{

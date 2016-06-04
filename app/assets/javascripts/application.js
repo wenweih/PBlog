@@ -8,8 +8,8 @@
 //= require typed
 //= require jQuery.headroom
 //= require highlight.pack
+
 document.addEventListener("turbolinks:load", function() {
-  $("#header").headroom();
   $("time.timeago").timeago();
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
   $('.typed-cursor').remove();
@@ -23,4 +23,33 @@ document.addEventListener("turbolinks:load", function() {
     typeSpeed: 80,
     contentType: 'html'
   });
+  if ($(this).scrollTop() == 0){
+    $("#header").css({
+      'background':'none',
+      'border-bottom':'none'
+    });
+    $("#header").find("a").css({
+      color:"#fff"
+    });
+  }
+  $(document).scroll(function(){
+    if ($(this).scrollTop() == 0){
+      $("#header").css({
+        'background':'none',
+        'border-bottom':'none'
+      });
+      $("#header").find("a").css({
+        color:"#fff"
+      });
+    }else if( $(this).scrollTop() !=0 ){
+      $("#header").css({
+        'background':'#fff',
+        'border-bottom':'1px solid #DDD',
+      });
+      $("#header").find("a").css({
+        color: '#66676e'
+      });
+    }
+  });
+  $("#header").headroom();
 });

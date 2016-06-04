@@ -1,0 +1,8 @@
+%body
+  - content_for(:title) { "New #{page.resource_name.titleize}" }
+  %header.header
+    %h1.header__heading
+      新增动弹
+    .header__actions
+      = link_to 'Back', :back, class: "button"
+  = render 'form', page: page
