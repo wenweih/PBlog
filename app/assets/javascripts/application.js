@@ -2,7 +2,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.timeago
-//= require semantic
+//= require semantic-2-1-8
 //= require jquery.timeago.zh-CN
 //= require headroom
 //= require typed
@@ -14,7 +14,7 @@ document.addEventListener("turbolinks:load", function() {
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
   $('.typed-cursor').remove();
   $('.person-description').typed({
-    strings: ['专注于 Web 全栈开发'],
+    strings: ['致力于 Web 全栈开发'],
     loop: true,
     showCursor: true,
     startDelay: 500,
