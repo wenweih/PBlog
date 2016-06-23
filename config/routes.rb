@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :tweets
+  resources :contacts
   post 'upload' => 'file_attach#post_image'
 
   resources :post, only: [:index,:show]

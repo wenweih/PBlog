@@ -9,7 +9,6 @@
           = link_to "博客", post_index_path, class:'item'
           = link_to "简历","#",class:'item'
           = link_to "作品","#",class:'item'
-          = link_to "联系","#",class:'item'
           .right.item
             - if signed_in?
               = button_to '退出', sign_out_path, method: :delete, class: 'ui green inverted button'

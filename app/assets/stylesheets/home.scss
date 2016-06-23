@@ -42,6 +42,30 @@ $home-title-color: #999aa1;
   background-attachment: fixed;
   opacity: 0.85;
   .ui.container{
+    &>.scroll{
+      display: inline-block;
+      height: 44px;
+      width: 28px;
+      border-radius: 100px;
+      border: 2px solid #fff;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 85vh;
+    }
+    &>.scroll:after {
+      display: inline-block;
+      height: 10px;
+      width: 4px;
+      background-color: #FFF;
+      border-radius: 50px;
+      content: "";
+      -webkit-animation: scroll 1.7s ease-out infinite forwards;
+      -moz-animation: scroll 1.7s ease-out infinite forwards;
+      animation: scroll 1.7s ease-out infinite forwards;
+    }
     .typedjs{
       padding: 1em;
       text-align:center;
@@ -137,4 +161,12 @@ $home-title-color: #999aa1;
       }
     }
   }
+}
+.contact.segment{
+  @include background-image(url("/bg-img.jpg"));
+  @include background;
+  background-attachment: fixed;
+  opacity: 0.85;
+  min-height: 100vh;
+  margin-top: 1rem;
 }

@@ -2,10 +2,12 @@
   %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
   %meta{:name => "viewport", :content => "width=device-width,initial-scale=1.0,maximum-scale=1.0"}
   %title
-    = if content_for?(:title) then yield(:title) + ' |' end
+    = if content_for?(:title) then yield(:title) + ' - ' end
     黄文威
   %meta{name:'Description',content:"#{yield_meta_tag(:description, 'Default description')}"}
   %meta{name:'Keywords',content:"#{yield_meta_tag(:keywords, 'defaults,ruby,rails')}"}
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  - if controller_name == 'post'
+    = stylesheet_link_tag    'simditor', media: 'all', 'data-turbolinks-track' => true
   = csrf_meta_tags
