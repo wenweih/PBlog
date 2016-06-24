@@ -2,12 +2,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.timeago
+//= require jquery.serialize-object.min
 //= require semantic-2-1-8
 //= require jquery.timeago.zh-CN
 //= require headroom
 //= require typed
 //= require jQuery.headroom
 //= require highlight.pack
+//= require js-routes
 
 document.addEventListener("turbolinks:load", function() {
   $("time.timeago").timeago();
@@ -52,7 +54,8 @@ document.addEventListener("turbolinks:load", function() {
     }
   });
   $("#header").headroom();
-  $('.contact_form').form({
+  var messageForm = $('.contact_form');
+  messageForm.form({
     on: 'blur',
     inline : true,
     fields: {
@@ -74,6 +77,7 @@ document.addEventListener("turbolinks:load", function() {
           },
           {
             type   : 'email',
+            optional   : true,
             prompt: "Please enter a valid e-mail"
           }
         ]
@@ -93,7 +97,17 @@ document.addEventListener("turbolinks:load", function() {
       }
     }
   });
-  $('.contact_btn').on('click',function(){
-    $('.contact_form').addClass('ui loading');
-  });
+  $('.contact_btn').on("click",function(){
+    if(messageForm.form('is valid')){
+      $('.contact_form').submit(function(e){
+        $('.contact_btn').text("Sent successfully");
+      });
+      $(this).addClass('disabled');
+    }else{
+      $('.contact_form').submit(function(e){
+        e.preventDefault();
+        $('.contact_btn').text("Failed to send");
+      });
+    }
+  })
 });
