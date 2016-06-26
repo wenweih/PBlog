@@ -109,5 +109,9 @@ document.addEventListener("turbolinks:load", function() {
         $('.contact_btn').text("Failed to send");
       });
     }
+  });
+  $('.scroll').on("click",function(e){
+    e.preventDefault();
+    $("body").animate({ scrollTop: $(window).height()}, 1000);
   })
 });

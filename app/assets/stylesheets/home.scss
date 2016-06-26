@@ -16,6 +16,15 @@ $home-title-color: #999aa1;
   font-weight: bold;
 }
 
+@include keyframes (Nextscroll) {
+  from{
+    margin-top: 0;
+  }
+  to{
+    margin-top: 2rem;
+  }
+}
+
 @include keyframes(backgroundScroll) {
   from {
     background-position: left top;
@@ -62,9 +71,8 @@ $home-title-color: #999aa1;
       background-color: #FFF;
       border-radius: 50px;
       content: "";
-      -webkit-animation: scroll 1.7s ease-out infinite forwards;
-      -moz-animation: scroll 1.7s ease-out infinite forwards;
-      animation: scroll 1.7s ease-out infinite forwards;
+      @include animation(Nextscroll 1.0s alternate infinite);
+
     }
     .typedjs{
       padding: 1em;
