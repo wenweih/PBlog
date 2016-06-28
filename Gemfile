@@ -27,7 +27,7 @@ gem 'bourbon'
 gem "autoprefixer-rails"
 
 #Generates javascript file that defines all Rails named routes as javascript helpers
-gem "js-routes"
+# gem "js-routes"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

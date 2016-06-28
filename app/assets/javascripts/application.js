@@ -2,14 +2,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.timeago
-//= require jquery.serialize-object.min
 //= require semantic-2-1-8
 //= require jquery.timeago.zh-CN
 //= require headroom
 //= require typed
 //= require jQuery.headroom
-//= require highlight.pack
-//= require js-routes
 
 document.addEventListener("turbolinks:load", function() {
   $("time.timeago").timeago();
@@ -112,10 +109,10 @@ document.addEventListener("turbolinks:load", function() {
   });
   $('.scroll').on("click",function(e){
     e.preventDefault();
-    $("body").animate({ scrollTop: $(window).height()}, 1000);
+    $("html,body").animate({ scrollTop: $(window).height()}, 800);
   });
   $('.contact_btn_masthead').on("click",function(e){
     e.preventDefault();
-    $("body").animate({ scrollTop: $(window).height()*2}, 800);
+    $("html,body").animate({ scrollTop: $(window).height()*2}, 800);
   });
 });
