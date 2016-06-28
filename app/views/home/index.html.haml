@@ -12,18 +12,10 @@
             %p.person-description
         .ui.fluid.horizontal.list
           .item
-            = link_to "联系我","javascript:void(0)",class:'large ui inverted button'
+            = link_to "联系我","javascript:void(0)",class:'large ui inverted button contact_btn_masthead'
           .item
             = link_to "简  历", post_path(ResumePost.first), class:'large ui inverted button'
         %a.scroll{ :href=>"javascript:void(0)" }
-    -# .post-list.ui.stripe.vertical.segment
-      .ui.stackable.very.relaxed.grid.container
-        .row
-          .twelve.wide.column
-            = render 'post'
-          .four.wide.column
-            = render 'experence'
-            = render 'tweet'
     .brief-itro.ui.stripe.community.vertical
       .ui.three.column.center.aligned.very.relaxed.stackable.grid.container
         .row.self-info
@@ -48,7 +40,7 @@
               %p
                 目标成为一名合格的全栈工程师
               %p
-                目前就职 oschina, 负责码云产品
+                就职 oschina, 参与产品开发、维护
               %p
                 了解 Ruby/Rails Front-end UNIX
           .column

@@ -92,56 +92,6 @@ $home-title-color: #999aa1;
     }
   }
 }
-.post-list{
-  padding-top: 5vh !important;
-  border-bottom: none !important;
-  background: #f6f8f8 !important;
-}
-.post-list.segment{
-  .twelve.wide.column{
-    .post-list-index{
-      .home-posts-title{
-        color: $home-title-color;
-      }
-      .list-post-list{
-        .post-article{
-          border-bottom: 1px dotted #e6e7eb;
-          margin-bottom: 2em;
-          .post-meta{
-            color: #999aa1 !important;
-          }
-          @extend %simditor-override;
-        }
-      }
-    }
-  }
-}
-.book-info{
-  display: inline-block;
-  vertical-align: top;
-  max-width: 116px;
-  padding-bottom: 0 !important;
-}
-.index-sidebar{
-  &>.home-book-title{
-    color: $home-title-color;
-  }
-  &>.home-tweet-title{
-    color: $home-title-color;
-  }
-  &.tweet-sidebar{
-    margin-top: 2rem;
-    &>.list-tweet{
-      &>.tweet-item{
-        &>.content{
-          &> a{
-            color: #666;
-          }
-        }
-      }
-    }
-  }
-}
 .brief-itro{
   min-height: 100vh;
   background-attachment: fixed;
@@ -171,10 +121,13 @@ $home-title-color: #999aa1;
   }
 }
 .contact.segment{
-  @include background-image(url("/bg-img.jpg"));
-  @include background;
+  @extend %textaligncenter;
+  background-color: #00B5AD;
   background-attachment: fixed;
   opacity: 0.85;
-  min-height: 100vh;
-  margin-top: 1rem;
+  height: 100vh;
+  margin-top: 14px;
+  @-moz-document url-prefix() {
+      margin-top: 0 !important
+  }
 }

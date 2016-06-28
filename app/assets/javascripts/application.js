@@ -113,5 +113,9 @@ document.addEventListener("turbolinks:load", function() {
   $('.scroll').on("click",function(e){
     e.preventDefault();
     $("body").animate({ scrollTop: $(window).height()}, 1000);
-  })
+  });
+  $('.contact_btn_masthead').on("click",function(e){
+    e.preventDefault();
+    $("body").animate({ scrollTop: $(window).height()*2}, 800);
+  });
 });
