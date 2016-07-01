@@ -2,7 +2,7 @@
 - title "#{@post.title}"
 - meta_tag :description,"#{@post.title}"
 - meta_tag :keywords,"#{@post.title},#{@post.tag_list}"
--# - meta_tag :cache,"no-cache"
+= stylesheet_link_tag    'simditor', media: 'all', 'data-turbolinks-track' => true
 .ui.vertical.stripe.post-show
   .ui.vertical.stripe.post-pic
     .row

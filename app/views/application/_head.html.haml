@@ -8,6 +8,4 @@
   %meta{name:'Keywords',content:"#{yield_meta_tag(:keywords, 'defaults,ruby,rails')}"}
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  - if controller_name == 'post'
-    = stylesheet_link_tag    'simditor', media: 'all', 'data-turbolinks-track' => true
   = csrf_meta_tags

@@ -8,6 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
-# Rails.application.config.assets.precompile += ['app/assets/javascripts/*.js', '*.css']
-Rails.application.config.assets.precompile += %w( admin/posts.js, typed.js editor.js simditor.js simditor.css simditor-markdown.css editor.css clearance.css dropzone.js dropzone.css admin/books.coffee )
+Rails.application.config.assets.precompile += %w( *.js admin/posts.js typed.js editor.js simditor.js simditor.css simditor-markdown.css editor.css clearance.css dropzone.js dropzone.css admin/books.coffee )

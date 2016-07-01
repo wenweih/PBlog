@@ -4,6 +4,7 @@
   - meta_tag :keywords,"网站,Ruby,Rubyist,开源,环保,全栈工程师,前端工程师,Ruby工程师,Rails工程师"
   = render 'head'
   %body
+    = javascript_include_tag params[:controller]
     = include_gon
     = render 'sidebar'
     .pusher
