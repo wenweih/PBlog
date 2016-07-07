@@ -16,7 +16,8 @@
       - else attribute.name == 'content'
         .post-content
           = render "application/editor", f: f
-  = f.text_field :tag_list,placeholder:"tag_list,spile with ,"
+  = f.select  :tag_list, @tags.collect { |t| [t.name,t.id] }, {}, { :multiple => "multiple" }
+  -# = f.text_field :tag_list,placeholder:"tag_list,spile with ,"
   = f.text_field :friend_url,placeholder: "friendly_url"
 = render "application/dropzone"
 .form-actions
@@ -26,3 +27,4 @@
   $(".btn-book-new-edit").on('click',function(){
     $(".form").submit();
   });
+  

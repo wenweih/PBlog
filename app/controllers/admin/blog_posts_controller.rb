@@ -22,7 +22,9 @@ module Admin
       end
     end
 
-    def show
+    def new
+      @tags = ActsAsTaggableOn::Tag.all
+      super
     end
     def create
       resource = resource_class.new(resource_params)

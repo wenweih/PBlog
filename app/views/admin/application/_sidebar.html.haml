@@ -1,0 +1,8 @@
+%ul.sidebar__list
+  - Administrate::Namespace.new(namespace).resources.each do |resource|
+    %li
+      = link_to(                                                            |
+          display_resource_name(resource),                                  |
+          [namespace, resource],                                            |
+          class: "sidebar__link sidebar__link--#{nav_link_state(resource)}" |
+        )                                                                   |
