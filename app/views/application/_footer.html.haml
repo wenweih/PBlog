@@ -1,4 +1,6 @@
-- cache 'footer' do
-  %footer
-    %span Copyright ©
-    = link_to "Wenwei Huang", root_path
+%footer
+  %span Copyright ©
+  = link_to "Wenwei Huang", root_path
+  = link_to "中文简体", change_locale_path(locale: "zh-CN"), class: "chinese_language"
+  \/
+  = link_to "English", change_locale_path(locale: "en")

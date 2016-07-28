@@ -50,6 +50,7 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
+gem 'http_accept_language'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'acts_as_votable', '~> 0.10.0'
@@ -57,14 +58,14 @@ gem 'acts_as_commentable_with_threading'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'kaminari'
+
 gem "html_truncator", "~>0.2"
 
 #To annotate just your models:   annotate --exclude tests,fixtures,factories,serializers
 gem 'annotate' #Annotate Rails classes with schema and routes info
 
 gem "rails_best_practices"
-
-gem 'active_link_to'
 
 #cache
 gem 'redis', '~>3.2' #A Ruby client library for Redis

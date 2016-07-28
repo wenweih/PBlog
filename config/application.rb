@@ -29,7 +29,7 @@ module MyPage
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'zh-CN'
     config.i18n.available_locales = ['zh-CN', 'en']
-    # config.i18n.default_locale = :de
+    config.i18n.fallbacks = true
 
     config.cache_store = :redis_store, 'redis://127.0.0.1:6379/0/cache', { expires_in: 240.minutes }
 

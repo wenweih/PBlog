@@ -5,8 +5,8 @@ footer{
   font-size: 15px;
   line-height: 1.42857143;
   color: #2c3e50;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: rgb(221, 221, 221);
-  @extend %textaligncenter;
+  padding-top: 2rem;
+  &>.chinese_language{
+    margin-left: 10rem;
+  }
 }

@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :tweets
   resources :contacts
-  post 'upload' => 'file_attach#post_image'
-
   resources :post, only: [:index,:show]
+
+  post 'upload' => 'file_attach#post_image'
+  get '/language/:locale', to: 'home#language', as: :change_locale
 
   namespace :admin do
     root to: "users#index"

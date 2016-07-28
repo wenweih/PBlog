@@ -1,8 +1,14 @@
 class HomeController < ApplicationController
   def index
-    # @posts = Post.last(3)
-    # @book_first = Book.first
-    # @books = Book.limit(4).offset(1)
-    # @tweets = Tweet.last(2)
+  end
+  def language
+    l = params[:locale].to_s.strip.to_sym
+    l = I18n.default_locale unless I18n.available_locales.include?(l)
+    cookies.permanent[:user_locale] = l
+    if request.env["HTTP_REFERER"].present?
+      redirect_to :back
+    else
+      redirect_to '/'
+    end
   end
 end
