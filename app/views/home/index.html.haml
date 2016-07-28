@@ -1,6 +1,7 @@
 - title "首页"
 - meta_tag :description,"黄文威 Rubyist"
 - meta_tag :keywords,"博客,个人主页,全栈工程师"
+- content_for :script, (javascript_include_tag params[:controller], 'data-turbolinks-track' => true)
 -cache 'home-index' do
   %main
     .masthead.segment
