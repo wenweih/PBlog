@@ -14,10 +14,7 @@
 #
 
 class Post < ActiveRecord::Base
-
   extend FriendlyId
-  include Redis::Objects
-
   attr_accessor :book_cover_url
   has_one :image, dependent: :destroy
 
@@ -25,8 +22,6 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
   validates :friend_url,presence: true,uniqueness: true
   belongs_to :user,class_name: "User"
-
-  counter :hits, default: 0
 
   acts_as_taggable_on :tags
   friendly_id :friend_url, :use => :slugged

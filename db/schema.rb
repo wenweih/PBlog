@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619061959) do
+ActiveRecord::Schema.define(version: 20160728064445) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160619061959) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type",       limit: 255
+    t.integer  "counters",   limit: 4,     default: 0, null: false
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
