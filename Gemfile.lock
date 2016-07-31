@@ -47,11 +47,6 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
-    acts_as_commentable_with_threading (2.0.1)
-      activerecord (>= 4.0)
-      activesupport (>= 4.0)
-      awesome_nested_set (>= 3.0)
-    acts_as_votable (0.10.0)
     addressable (2.4.0)
     administrate (0.1.5)
       autoprefixer-rails (~> 6.0)
@@ -70,8 +65,6 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.7)
       execjs
-    awesome_nested_set (3.1.1)
-      activerecord (>= 4.0.0, < 5.1)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -282,7 +275,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -301,8 +294,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
-  acts_as_commentable_with_threading
-  acts_as_votable (~> 0.10.0)
   administrate (~> 0.1.4)
   annotate
   autoprefixer-rails

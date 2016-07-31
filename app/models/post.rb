@@ -24,6 +24,7 @@ class Post < ActiveRecord::Base
   belongs_to :user,class_name: "User"
 
   acts_as_taggable_on :tags
+  
   friendly_id :friend_url, :use => :slugged
 
   after_create do

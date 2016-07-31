@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728064445) do
+ActiveRecord::Schema.define(version: 20160731065539) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -21,23 +21,6 @@ ActiveRecord::Schema.define(version: 20160728064445) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
-
-  create_table "comments", force: :cascade do |t|
-    t.integer  "commentable_id",   limit: 4
-    t.string   "commentable_type", limit: 255
-    t.string   "title",            limit: 255
-    t.text     "body",             limit: 65535
-    t.string   "subject",          limit: 255
-    t.integer  "user_id",          limit: 4,     null: false
-    t.integer  "parent_id",        limit: 4
-    t.integer  "lft",              limit: 4
-    t.integer  "rgt",              limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -110,21 +93,6 @@ ActiveRecord::Schema.define(version: 20160728064445) do
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
-
-  create_table "votes", force: :cascade do |t|
-    t.integer  "votable_id",   limit: 4
-    t.string   "votable_type", limit: 255
-    t.integer  "voter_id",     limit: 4
-    t.string   "voter_type",   limit: 255
-    t.boolean  "vote_flag"
-    t.string   "vote_scope",   limit: 255
-    t.integer  "vote_weight",  limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "images", "posts"
 end

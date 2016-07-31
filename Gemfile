@@ -53,9 +53,6 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 gem 'http_accept_language'
 
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'acts_as_votable', '~> 0.10.0'
-gem 'acts_as_commentable_with_threading'
-
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'kaminari'
