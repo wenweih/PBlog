@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   attr_accessor :book_cover_url
   has_one :image, dependent: :destroy
+  has_many  :likes, dependent:  :destroy
 
   validates :title, presence: true
   validates :content, presence: true
@@ -24,7 +25,7 @@ class Post < ActiveRecord::Base
   belongs_to :user,class_name: "User"
 
   acts_as_taggable_on :tags
-  
+
   friendly_id :friend_url, :use => :slugged
 
   after_create do
