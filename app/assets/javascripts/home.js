@@ -1,30 +1,19 @@
-//= require typed
 document.addEventListener("turbolinks:load", function() {
-  $('.person-description').typed({
-    strings: ['致力于 Web 全栈开发'],
-    loop: true,
-    showCursor: true,
-    startDelay: 500,
-    backSpeed: 10,
-    backDelay: 1500,
-    typeSpeed: 80,
-    contentType: 'html'
-  });
   $(window).scroll(function(){
     if ($(this).scrollTop() == 0){
-      $("#header").css({
+      $(".headeroom").css({
         'background':'none',
         'border-bottom':'none'
       });
-      $("#header").find("a").css({
+      $(".headeroom").find("a").css({
         color:"#fff"
       });
     }else if( $(this).scrollTop() !=0 ){
-      $("#header").css({
+      $(".headeroom").css({
         'background':'#fff',
         'border-bottom':'1px solid #DDD',
       });
-      $("#header").find("a").css({
+      $(".headeroom").find("a").css({
         color: '#66676e'
       });
     }
@@ -33,14 +22,14 @@ document.addEventListener("turbolinks:load", function() {
     $("html,body").animate({ scrollTop: $(window).height()}, 800);
   });
   $("body").delegate(".contact_btn_masthead", "click",function(e){
-    $("html,body").animate({ scrollTop: $(window).height()*2}, 800);
+    $("html,body").animate({ scrollTop: $(document).height()*2}, 800);
   });
   if ($(window).scrollTop() == 0){
-    $("#header").css({
+    $(".headeroom").css({
       'background':'none',
       'border-bottom':'none'
     });
-    $("#header").find("a").css({
+    $(".headeroom").find("a").css({
       color:"#fff"
     });
   }
