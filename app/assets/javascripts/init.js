@@ -6,6 +6,8 @@
 //= require js-routes
 //= require typed
 //=  require highlight
+//= require modernizr.custom
+//= require notification
 window.App || (window.App = {});
 App = {
   init: function(){
@@ -34,6 +36,7 @@ App = {
     $(document).on('turbolinks:before-cache', function(){
       App.beforeCache.typedCache();
       App.beforeCache.formCache();
+      App.beforeCache.flashCache();
     });
     return;
   },
@@ -92,6 +95,7 @@ App = {
     home: function(){
       if($('.home.index').length > 0){
         App.Home.messageForm();
+        App.Home.sayHello();
       }
     }
   },
@@ -101,11 +105,15 @@ App = {
     },
     formCache: function(){
       $('.contact_form').form('clear');
+    },
+    flashCache: function(){
+      $('.ns-box').remove();
     }
   },
   bind: {
     events: function(){
       $(document).on('click', function(e){
+        console.log("click");
         var behavior = $(e.target).attr("data-behavior");
         if ( behavior !== undefined ) {
           eval("App.events." + behavior + "();");
@@ -115,8 +123,10 @@ App = {
   },
   events: {
     homeScrollNext: function(){
-      console.log("run...");
       $("html,body").animate({ scrollTop: $(window).height()}, 800);
+    },
+    homeContactMe: function(){
+      $("html,body").animate({ scrollTop: $(document).height()*2}, 800);
     }
   }
 };
