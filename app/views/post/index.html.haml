@@ -1,5 +1,24 @@
 - title "文章列表"
-- meta_tag :description,"关注 Web 全栈开发，总结 Web 开发经验，前端，后段  Full Stack Developer"
+- meta_tag :description,"关注 Web 全栈开发，总结 Web 开发经验，前端，后端  Full Stack Developer"
 - meta_tag :keywords,"博客,个人主页,全栈工程师,前端,后端,Fronted-end,Back-end,Ruby,Rails"
 = stylesheet_link_tag    'simditor', media: 'all', 'data-turbolinks-track' => true
-%main.post-index
+.post-index
+  .stackable.very.relaxed.ui.grid.container
+    .row
+      .ten.wide.column.post_list.ui.list
+        - @posts.each do |p|
+          .item
+            %h2.ui.header
+              = link_to "#{p.title}",post_path(p), class:'post-link'
+            .ui.horizontal.list
+              .item
+                阅读#{p.counters}
+              .item
+                评论
+              .item
+                喜欢#{}
+        = paginate @posts
+      .six.wide.column.post_list_sidebar
+        .most_read.ui.list
+        .tag_listx
+        .comment_list

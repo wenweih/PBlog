@@ -8,6 +8,6 @@
 #  updated_at :datetime         not null
 #
 
-class Tweet < ActiveRecord::Base
+class Tweet < ApplicationRecord
   validates :content, presence: true
 end

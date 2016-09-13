@@ -4,8 +4,7 @@
 #= require uploader
 #= require marked
 #= require to-markdown
-#= require highlight.pack
+#= require highlight
 #= require simditor
 #= require simditor-markdown
 #= require simditor-fullscreen
-#= require highlight.pack

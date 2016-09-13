@@ -6,3 +6,9 @@
     .header__actions
       = link_to "Show #{page.page_title}", [namespace, page.resource], class: "button"
   = render "form", page: page
+:javascript
+  $("pre").each(function(){
+      var html = $(this).html();
+      var pattern = html.match(/\s*\n[\t\s]*/);
+      $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
+  });

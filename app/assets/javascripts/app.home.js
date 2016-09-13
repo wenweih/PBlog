@@ -41,40 +41,12 @@ App.Home = {
           ]
         }
       }
-    })
+    });
+
   },
   sayHello: function(){
     setTimeout(function(){
-      $(document).notification("<div class='ns-thumb'><img src='/user.jpg'/></div><div class='ns-content'><p><a href='#'>Zoe Moulder</a> accepted your invitation.</p></div>");
+      $(document).notification("Hello");
     }, 3200);
   }
 };
-document.addEventListener("turbolinks:load", function() {
-  $('.contact_btn').on("click",function(){
-    if($('.contact_form').form('is valid')){
-      $('.contact_form').submit(function(e){
-        $('.contact_btn').text("Sent successfully");
-      });
-      $(this).addClass('disabled');
-    }else{
-      $('.contact_form').submit(function(e){
-        e.preventDefault();
-        $('.contact_btn').text("Failed to send");
-      });
-    }
-  });
-
-  var bttn = $('#notification-trigger');
-  bttn.disabled = false;
-  bttn.on('click', function(){
-    var self = this
-    bttn.addClass('active');
-    setTimeout(function(){
-      bttn.removeClass('active');
-
-      $(self).notification("<div class='ns-thumb'><img src='/user.jpg'/></div><div class='ns-content'><p><a href='#'>Zoe Moulder</a> accepted your invitation.</p></div>");
-    }, 1200);
-    this.disabled = true;
-  });
-
-});

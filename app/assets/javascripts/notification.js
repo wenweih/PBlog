@@ -13,6 +13,7 @@
 
 
   var Notification = function(el, parameters) {
+
     this.options;
     if ($.isPlainObject(parameters)){
       this.options = $.extend({}, $.fn.notification.defaults, parameters);
@@ -38,12 +39,19 @@
     constructor: Notification,
 
     build: function() {
+
+      var $existElm = $('.ns-box');
+      if ($existElm !== undefined){
+        $existElm.remove();
+      }
       // create HTML structure
       this.ntf = document.createElement( 'div' );
-      this.ntf.className = 'ns-box ns-' + this.options.layout + ' ns-effect-' + this.options.effect + ' ns-type-' + this.options.type;
+      var msg = this.message;
       this.ntf.className = 'ns-box ns-other' + ' ns-effect-thumbslider' + ' ns-type-' + this.options.type;
       var strinner = '<div class="ns-box-inner">';
-      strinner += this.message;
+      strinner += "<div class='ns-thumb'><img src='/user.jpg'/></div><div class='ns-content'><p><a href='#'>Wenwei Huang</a>\n</p>"
+      strinner += "<p>"+ msg + "</p>"
+      strinner += "</div>"
       strinner += '</div>';
       strinner += '<span class="ns-close"></span></div>';
       this.ntf.innerHTML = strinner;

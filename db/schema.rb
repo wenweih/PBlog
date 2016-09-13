@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731065539) do
+ActiveRecord::Schema.define(version: 20160731071407) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(version: 20160731065539) do
 
   add_index "images", ["book_id"], name: "index_images_on_book_id", using: :btree
   add_index "images", ["post_id"], name: "index_images_on_post_id", using: :btree
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "post_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -95,4 +103,5 @@ ActiveRecord::Schema.define(version: 20160731065539) do
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
   add_foreign_key "images", "posts"
+  add_foreign_key "likes", "posts"
 end

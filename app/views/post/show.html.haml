@@ -1,8 +1,6 @@
-- content = @content
 - title "#{@post.title}"
 - meta_tag :description,"#{@post.title}"
 - meta_tag :keywords,"#{@post.title},#{@post.tag_list}"
-= stylesheet_link_tag    'simditor', media: 'all', 'data-turbolinks-track' => true
 .ui.vertical.stripe.post-show
   .ui.vertical.stripe.post-pic
     .row
@@ -11,4 +9,15 @@
     .row
       .sixteen.wide.column
         %article.post-detail
-          = render partial: "post", locals: {post: @post}
+          %h1.ui.header.post-header
+            = @post.title
+          .simditor.override-simditor
+            .post-content.description.simditor-body.override-simditor-body
+              = raw @post.content
+          .post-tag.ui.tag.labels
+            - @post.tag_list.each do |tag|
+              = link_to tag, "#", class: 'ui label'
+          .like
+            = link_to "#", remote: true, method: :delete, class:'ui green basic button like-btn' do
+              %span.like_count  #{@like_count}
+              %span Like

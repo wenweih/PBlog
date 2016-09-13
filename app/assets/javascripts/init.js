@@ -1,6 +1,6 @@
 //= require headroom
 //= require jQuery.headroom
-//= require semantic-2-2-4
+//= require semantic
 //= require jquery.timeago
 //= require jquery.timeago.zh-CN
 //= require js-routes
@@ -95,7 +95,7 @@ App = {
     home: function(){
       if($('.home.index').length > 0){
         App.Home.messageForm();
-        App.Home.sayHello();
+        // App.Home.sayHello();
       }
     }
   },
@@ -112,8 +112,7 @@ App = {
   },
   bind: {
     events: function(){
-      $(document).on('click', function(e){
-        console.log("click");
+      $(document).on('click',"*[data-behavior]", function(e){
         var behavior = $(e.target).attr("data-behavior");
         if ( behavior !== undefined ) {
           eval("App.events." + behavior + "();");
@@ -127,6 +126,17 @@ App = {
     },
     homeContactMe: function(){
       $("html,body").animate({ scrollTop: $(document).height()*2}, 800);
+    },
+    messageForm:  function(){
+      var $form = $('.contact_form');
+      if($form.form('is valid')){
+        $(this).addClass('disabled');
+      }else{
+        $form.submit(function(e){
+          e.preventDefault();
+          $('.contact_btn').text("Failed to send");
+        });
+      }
     }
   }
 };

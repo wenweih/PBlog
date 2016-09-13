@@ -11,7 +11,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Book < ActiveRecord::Base
+class Book < ApplicationRecord
 
   attr_accessor :book_cover_url
 

@@ -96,7 +96,7 @@ $home-title-color: #999aa1;
   min-height: 100vh;
   background-attachment: fixed;
   opacity: 0.85;
-  @include background-image(url("/brif-info.jpg"));
+  background-color: #2EA9DF;
   background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
@@ -122,7 +122,7 @@ $home-title-color: #999aa1;
 }
 .contact.segment{
   @extend %textaligncenter;
-  background-color: #00B5AD;
+  background-color: #00AA90;
   background-attachment: fixed;
   opacity: 0.85;
   height: 100vh;

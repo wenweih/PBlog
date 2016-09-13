@@ -11,7 +11,7 @@
 #  remember_token     :string(128)      not null
 #
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   include Clearance::User
   has_many :posts, dependent: :destroy
 end

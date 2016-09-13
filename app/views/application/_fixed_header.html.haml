@@ -1,0 +1,18 @@
+%header.fixed_header
+  .ui.container
+    .ui.vertical.center.aligned.segment
+      .ui.large.secondary.menu
+        %a.toc.item
+          %i.sidebar.icon
+        = link_to 'WENWEI HUANG', root_path, class:"item #{nav_active(path: 'home#index')}"
+        = link_to "BLOG", post_index_path, class:"item #{nav_active(path: 'post#index')}"
+        = link_to "RESUME","#",class:'item'
+        = link_to "PORTFOLIO","#",class:'item'
+  .sub_menu.ui.sticky
+    .ui.container
+      .ui.large.secondary.menu
+        = link_to '全部', root_path, class:'item'
+        = link_to '生活', root_path, class:'item'
+        = link_to '编程', root_path, class:'item'
+        = link_to '书评', root_path, class:'item'
+        = link_to '动弹', root_path, class:'item'

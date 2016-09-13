@@ -10,7 +10,7 @@
 #  post_id    :integer
 #
 
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   belongs_to :book
 
   before_destroy do

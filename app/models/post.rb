@@ -13,7 +13,7 @@
 #  type       :string(255)
 #
 
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   extend FriendlyId
   attr_accessor :book_cover_url
   has_one :image, dependent: :destroy
@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
   end
 
   after_update do
-    if self.book_cover_url != ""
+    unless self.book_cover_url.blank?
       if self.image.present? && self.image.url.present?
         File.delete("#{Rails.root}/public#{self.image.url}")
         self.image.update_columns(:url=> "#{self.book_cover_url}")

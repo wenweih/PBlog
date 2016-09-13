@@ -6,8 +6,6 @@
     黄文威
   %meta{name:'Description',content:"#{yield_meta_tag(:description, 'Default description')}"}
   %meta{name:'Keywords',content:"#{yield_meta_tag(:keywords, 'defaults,ruby,rails')}"}
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = yield :script
-  = yield :style
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   = csrf_meta_tags

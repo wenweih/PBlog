@@ -313,7 +313,6 @@
 .ns-effect-boxspinner .ns-box-inner {
 	backface-visibility: hidden;
 }
-
 .ns-effect-boxspinner.ns-show .ns-box-inner,
 .ns-effect-boxspinner.ns-show .ns-close,
 .ns-effect-boxspinner.ns-hide {
@@ -405,7 +404,14 @@
 	padding: 0 40px 0 80px;
 	height: 64px;
 	line-height: 60px;
+
 }
+.ns-content{
+	background-color: #FCFFF5 !important;
+}
+/*.ns-thumb{
+	box-shadow: 0 0 0 1px #1678c2 inset!important;
+}*/
 
 .ns-effect-thumbslider.ns-show .ns-content,
 .ns-effect-thumbslider.ns-hide .ns-content {

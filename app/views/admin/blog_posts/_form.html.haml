@@ -1,3 +1,4 @@
+- @tags = ActsAsTaggableOn::Tag.order(taggings_count: :desc)
 = form_for([namespace, page.resource], html: { class: "form" }) do |f|
   - if page.resource.errors.any?
     #error_explanation
@@ -16,8 +17,7 @@
       - else attribute.name == 'content'
         .post-content
           = render "application/editor", f: f
-  = f.select  :tag_list, @tags.collect { |t| [t.name,t.id] }, {}, { :multiple => "multiple" }
-  -# = f.text_field :tag_list,placeholder:"tag_list,spile with ,"
+  = f.select  :tag_list, @tags.collect { |t| [t.name,t.name] }, {}, { :multiple => "multiple" }
   = f.text_field :friend_url,placeholder: "friendly_url"
 = render "application/dropzone"
 .form-actions
@@ -27,4 +27,3 @@
   $(".btn-book-new-edit").on('click',function(){
     $(".form").submit();
   });
-  

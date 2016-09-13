@@ -1,10 +1,22 @@
+/*
+ *= require semantic
+ *= require ns-default
+ *= require ns-style-other
+*/
+
 @import "bourbon";
-@import "semantic-2-1-8";
 @import "header";
 @import "footer";
 @import "home";
+@import "clearance";
 @import "post";
+@import "simditor";
 @import "solarized-light";
+.menu{
+  &>.active{
+    color: #57cdf9 !important;
+  }
+}
 %textaligncenter{
   text-align: center !important;
   display:  flex !important;
@@ -21,5 +33,12 @@
     &>.override-simditor-body p{
       color: #66676e;
     }
+  }
+}
+.header-transparent{
+  background: none !important;
+  border-bottom: none !important;
+  a{
+    color: #fff !important;
   }
 }
