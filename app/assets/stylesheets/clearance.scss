@@ -1,16 +1,9 @@
 .sessions.new{
   background-color: #DADADA;
-
+  &>.grid {
+    height: 100%;
+    &>.column {
+      max-width: 450px;
+    }
+  }
 }
-// body {
-//   background-color: #DADADA;
-// }
-// body > .grid {
-//   height: 100%;
-// }
-// .image {
-//   margin-top: -100px;
-// }
-// .column {
-//   max-width: 450px;
-// }
