@@ -2,7 +2,6 @@ App.Home = {
   messageForm: function() {
     $('.contact_form').form({
       on: 'blur',
-      inline : true,
       fields: {
         name: {
           identifier  : "contact[name]",

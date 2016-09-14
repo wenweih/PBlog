@@ -24,6 +24,7 @@ App = {
     App.initUI.initTyped();
     App.initUI.initSemanticUITool();
     App.initUI.initHighLight();
+    App.initUtil();
     return;
   },
   sitePageInit: function(){
@@ -91,6 +92,13 @@ App = {
       });
     }
   },
+  initUtil: function(){
+    $('html,body').on("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
+      if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
+        $('html,body').stop().on('scroll mousedown DOMMouseScroll mousewheel keyup');
+      }
+    });
+  },
   initPage: {
     home: function(){
       if($('.home.index').length > 0){
@@ -116,16 +124,17 @@ App = {
         var behavior = $(e.target).attr("data-behavior");
         if ( behavior !== undefined ) {
           eval("App.events." + behavior + "();");
+          e.stopPropagation();
         }
       })
     }
   },
   events: {
     homeScrollNext: function(){
-      $("html,body").animate({ scrollTop: $(window).height()}, 800);
+      $("body").animate({ scrollTop: $(window).height()}, 800);
     },
     homeContactMe: function(){
-      $("html,body").animate({ scrollTop: $(document).height()*2}, 800);
+      $("html,body").animate({ scrollTop: $(document).height()}, 800);
     },
     messageForm:  function(){
       var $form = $('.contact_form');

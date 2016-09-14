@@ -58,6 +58,7 @@
   .contact.segment
     .ui.text.container
       = form_for :contact, url: contacts_path, remote:true, html:{ class: 'ui form contact_form'} do |f|
+        .ui.error.message
         .two.fields
           .field
             = f.text_field  :name, :placeholder => "Name"
