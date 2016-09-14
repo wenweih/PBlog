@@ -2,6 +2,8 @@
  *= require semantic
  *= require ns-default
  *= require ns-style-other
+ *= require simditor
+ *= require solarized-light
 */
 
 @import "bourbon";
@@ -10,8 +12,6 @@
 @import "home";
 @import "clearance";
 @import "post";
-@import "simditor";
-@import "solarized-light";
 .menu{
   &>.active{
     color: #57cdf9 !important;
