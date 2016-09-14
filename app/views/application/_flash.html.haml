@@ -1,4 +1,8 @@
-#flash
-  - flash.each do |key,value|
-    .flash
-      = value
+- flash.each do |name,msg|
+  .flash{ :class => name }
+    :javascript
+      $(document).on('turbolinks:load', function(){
+        if($('.flash.notice').length > 0){
+          $(document).notification("#{j(msg)}");
+        }
+      });

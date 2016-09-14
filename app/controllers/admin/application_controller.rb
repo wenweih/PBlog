@@ -9,7 +9,7 @@ module Admin
     include Clearance::Controller
 
     before_action :authenticate_admin
-    
+
     def authenticate_admin
       signed_in? ? (admin_users_path) : (redirect_to root_path)
     end

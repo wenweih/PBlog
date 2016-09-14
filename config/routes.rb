@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :tweets
   resources :contacts
   resources :post, only: [:index,:show]
+  resource :session, controller: "sessions", only: [:create, :destroy,  :new]
 
   post 'upload' => 'file_attach#post_image'
   get '/language/:locale', to: 'home#language', as: :change_locale
 
   namespace :admin do
-    root to: "users#index"
     resources :users
     resources :posts
     resources :books
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
     resources :book_reviews
     resources :resume_posts
   end
+
 end
