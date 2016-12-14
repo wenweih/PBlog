@@ -1,7 +1,7 @@
 class PostController < ApplicationController
   include Obfuscate
   def index
-    @posts = Post.order('created_at DESC').page params[:page]
+    @posts = params[:blog_type].present? ? Post.tagged_with(params[:blog_type]).page(params[:page]) : Post.page(params[:page])
   end
   def show
     @post = Post.friendly.find(params[:id])

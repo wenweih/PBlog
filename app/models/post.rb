@@ -28,6 +28,8 @@ class Post < ApplicationRecord
 
   friendly_id :friend_url, :use => :slugged
 
+  default_scope { order(created_at: :desc) }
+
   after_create do
     cover = Image.create(url: self.book_cover_url)
     self.image = cover

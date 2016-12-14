@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ActsAsTaggableOn::Tag.create(name: "live")
+ActsAsTaggableOn::Tag.create(name: "dev")
+ActsAsTaggableOn::Tag.create(name: "book")
