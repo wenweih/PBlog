@@ -1,15 +1,14 @@
--cache 'header' do
-  %header.headeroom
-    .ui.vertical.center.aligned.segment.header-menu
-      .ui.container
-        .ui.large.secondary.menu
-          %a.toc.item
-            %i.sidebar.icon
-          = link_to "WENWEI HUANG",root_path, class:"item #{nav_active(path: 'home#index')}"
-          = link_to "BLOG", post_index_path, class:"item #{nav_active(path: 'blog#index')}"
-          = link_to "RESUME","#",class:'item'
-          = link_to "PORTFOLIO","#",class:'item'
-          .right.item
-            - if signed_in?
-              = button_to '退出', sign_out_path, method: :delete, class: 'ui green inverted button'
-              = button_to '后台管理', admin_users_path, method: :get, class: 'ui inverted blue button'
+%header.headeroom
+  .ui.vertical.center.aligned.segment.header-menu
+    .ui.container
+      .ui.large.secondary.menu
+        %a.toc.item
+          %i.sidebar.icon
+        = link_to "WENWEI HUANG",root_path, class:"item #{nav_active(path: 'home#index')}"
+        = link_to "BLOG", post_index_path, class:"item #{nav_active(path: 'blog#index')}"
+        = link_to "RESUME","#",class:'item'
+        = link_to "PORTFOLIO","#",class:'item'
+        .right.item
+          - if signed_in?
+            = button_to '退出', sign_out_path, method: :delete, class: 'ui green inverted button'
+            = button_to '后台管理', admin_users_path, method: :get, class: 'ui inverted blue button'

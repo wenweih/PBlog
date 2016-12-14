@@ -9,7 +9,7 @@ module Admin
     # end
     def update
       if requested_resource.update(resource_params)
-        requested_resource.update_attribute(params[:friend_url]) if requested_resource.friend_url_changed?
+        requested_resource.update_attribute(params[:friend_url])
         requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
         redirect_to(
           admin_posts_path,

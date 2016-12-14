@@ -36,4 +36,5 @@ bower.json
 .powenv
 .sass-cache
 public/uploads
+public/assets/
 .DS_Store
