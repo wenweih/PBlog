@@ -1,6 +1,6 @@
 //= require headroom
 //= require jQuery.headroom
-//= require semantic
+//= require semantic-2-2-6
 //= require jquery.timeago
 //= require jquery.timeago.zh-CN
 //= require js-routes
