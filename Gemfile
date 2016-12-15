@@ -38,7 +38,8 @@ gem 'gon'
 gem "browser"
 
 gem 'clearance'
-gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
+gem "administrate", "~> 0.3.0"
+# gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
 #
 #
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
