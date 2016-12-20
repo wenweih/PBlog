@@ -30,6 +30,7 @@ gem "js-routes"
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'settingslogic'
+gem "lograge"
 
 gem "haml-rails", "~> 0.9"
 
@@ -39,14 +40,13 @@ gem "browser"
 
 gem 'clearance'
 gem "administrate", "~> 0.3.0"
-# gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
 #
 #
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'http_accept_language'
 #
 gem 'acts-as-taggable-on', '~> 4.0'
-gem 'friendly_id', github:  'norman/friendly_id', branch: 'master'
+gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 gem 'kaminari'
 
