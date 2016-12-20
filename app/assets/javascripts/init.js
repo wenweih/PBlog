@@ -82,7 +82,7 @@ App = {
       $('.sub_menu').sticky({ context: '.post-index' });
     },
     initHighLight: function(){
-      $('pre code').each(function(i, block) {
+      $(".simditor-body pre").each(function(i, block) {
         // http://stackoverflow.com/questions/31753617/how-can-i-remove-leading-whitespace-in-my-pre-code-block-without-removing-in
         var html = $(this).html();
         var pattern = html.match(/\s*\n[\t\s]*/);

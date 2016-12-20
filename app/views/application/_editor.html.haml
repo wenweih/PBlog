@@ -21,6 +21,9 @@
     },
     pasteImage: true
   });
-  $(".simditor-body > pre").each(function(i, block) {
+  $(".simditor-body pre").each(function(i, block) {
+    var html = $(this).html();
+    var pattern = html.match(/\s*\n[\t\s]*/);
+    $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
     hljs.highlightBlock(block);
   });
