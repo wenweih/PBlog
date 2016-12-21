@@ -35,7 +35,11 @@
     }
   }
 }
-
+.post.index{
+  &>.pusher{
+    height: auto !important;
+  }
+}
 .post-index{
   min-height: 10rem;
   background: #fafafa;
