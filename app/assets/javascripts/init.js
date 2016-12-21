@@ -3,6 +3,7 @@
 //= require semantic-2-2-6
 //= require jquery.timeago
 //= require jquery.timeago.zh-CN
+//= require jquery.timeago.en
 //= require js-routes
 //= require typed
 //=  require highlight

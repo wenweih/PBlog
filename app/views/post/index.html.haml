@@ -8,7 +8,9 @@
       .ten.wide.column.post_list.ui.list
         - @posts.each do |p|
           .item
-            %h2.ui.header
+            %time.timeago{ :datatime => "#{p.created_at}"}
+            -# %time.timeago{ :data => {:time => "#{p.created_at}"} }
+            %h3.ui.header
               = link_to "#{p.title}",post_path(p), class:'post-link'
             .ui.horizontal.list
               .item

@@ -44,4 +44,35 @@
   min-height: 10rem;
   background: #fafafa;
   margin: 1rem 0 1rem 0;
+  &>.container{
+    &>.row{
+      &>.list{
+        &>.item{
+          border-bottom: 1px dashed #d9d9d9;
+          padding-bottom: 17px;
+          .create_at{
+            margin: 8px 0;
+            font-size: 12px;
+            color: #717171;
+            margin: 8px 0;
+          }
+          &>.header{
+            margin-top: 1rem;
+            &> a{
+              color: #555555 !important;
+            }
+          }
+          &>.list{
+            &>.item{
+              color: #999999;
+              font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+              font-size: 12px;
+              font-weight: normal;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
