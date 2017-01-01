@@ -3,3 +3,4 @@
 //= require turbolinks
 //= require init
 //= require app.home
+//= require rails_emoji_picker
