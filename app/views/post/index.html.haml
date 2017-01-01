@@ -14,11 +14,14 @@
               = link_to "#{p.title}",post_path(p), class:'post-link'
             .ui.horizontal.list
               .item
-                阅读#{p.counters}
+                %i.unhide.icon
+                #{p.counters}
               .item
-                评论
+                %i.comment.outline.icon
+                #{p.comments.size}
               .item
-                喜欢#{}
+                %i.icon.time
+                #{p.created_at.strftime('%F')}
         = paginate @posts
       .six.wide.column.post_list_sidebar
         .most_read.ui.list

@@ -14,4 +14,22 @@ class ApplicationController < ActionController::Base
     end
     I18n.locale = l || I18n.locale
   end
+  rescue_from ActiveRecord::RecordInvalid do |err|
+    render_404
+    # render json: { error: 'RecordInvalid', message: "#{err}" }, status: 400
+  end
+  def render_404
+    render_optional_error_file(404)
+  end
+
+  def render_403
+    render_optional_error_file(403)
+  end
+
+  def render_optional_error_file(status_code)
+    status = status_code.to_s
+    fname = %w(404 403 422 500).include?(status) ? status : 'unknown'
+    render template: "/#{fname}", format: [:html],
+           status: status, layout: 'application'
+  end
 end

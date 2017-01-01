@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     post = Post.friendly.find(post_friendly_id)
     @comment = Comment.new(comment_params)
     @comment.post = post
-    @comment.save
+    redirect_to :back, notice: '评论失败' unless @comment.save
   end
 
   private
