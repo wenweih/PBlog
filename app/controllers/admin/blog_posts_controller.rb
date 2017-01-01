@@ -8,8 +8,8 @@ module Admin
     #   @resources = User.all.paginate(10, params[:page])
     # end
     def update
+      params_tags = params[:blog_post].delete :tag_list
       if requested_resource.update(resource_params)
-        params_tags = params[:blog_post][:tag_list]
         db_tags = requested_resource.tag_list
         add_tags = params_tags - db_tags
         remove_tag = db_tags - params_tags
@@ -28,9 +28,10 @@ module Admin
     end
 
     def create
+      tag_lists = params[:blog_post].delete :tag_list
       resource = resource_class.new(resource_params)
+      resource.tag_list.add(tag_lists)
       if resource.save
-        requested_resource.tag_list.add(params[:tag_list]) if params[:tag_list]
         redirect_to(
           admin_posts_path,
           notice: translate_with_resource("create.success"),

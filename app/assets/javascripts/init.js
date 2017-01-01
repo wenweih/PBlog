@@ -113,7 +113,6 @@ App = {
     home: function(){
       if($('.home.index').length > 0){
         App.Home.messageForm();
-        // App.Home.sayHello();
       }
     }
   },
