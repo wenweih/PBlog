@@ -1,0 +1,11 @@
+= form_for Comment.new, remote: true, html: { url: "/comments", class: 'ui form' } do |f|
+  .required.field
+    = f.text_field :name, placeholder: 'Your name'
+  .required.field
+    = f.text_field :email, placeholder: "Feel free to write your contract email, we don't expose it"
+  .required.field
+    = f.text_area :content, placeholder: "Write a response"
+    = f.hidden_field :post, value: post.friendly_id
+  .actions
+    = f.submit '发表', class: 'ui positive basic button'
+    = link_to '取消', "javascript:void(0)", class: 'ui negative basic button', data: { behavior: "commentaccordion" }

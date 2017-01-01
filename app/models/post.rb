@@ -18,6 +18,7 @@ class Post < ApplicationRecord
   attr_accessor :book_cover_url
   has_one :image, dependent: :destroy
   has_many  :likes, dependent:  :destroy
+  has_many  :comments
 
   validates :title, presence: true
   validates :content, presence: true

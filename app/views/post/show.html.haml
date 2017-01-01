@@ -21,3 +21,16 @@
             = link_to "#", remote: true, method: :delete, class:'ui green basic button like-btn' do
               %span.like_count  #{@like_count}
               %span Like
+        %comments.comments
+          .comment-head
+            %span.comment-count
+              #{@post.comments.size} 条评论
+          .ui.accordion.comment_form
+            .title
+              %i.icon.dropdown
+              您想说点什么吗？
+            .content
+              .ui.segment
+                = render partial: 'comments/form', locals: { post: @post }
+          - @post.comments.each_with_index do |comment|
+            = render partial: 'comments/comment', locals: { comment: comment }

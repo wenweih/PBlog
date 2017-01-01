@@ -1,0 +1,8 @@
+.comment
+  %span.name
+    =  comment.name.html_safe
+  %span.comment_at
+    评论于 #{comment.created_at.strftime('%F %H:%M')}
+
+  %p.conent
+    = comment.content.html_safe

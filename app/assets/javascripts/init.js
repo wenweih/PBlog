@@ -88,6 +88,11 @@ App = {
       }
     },
     initSemanticUITool: function(){
+      $('.comment_form').accordion({
+        onOpen: function(e){
+          $("body").animate({ scrollTop: $('.comment-head').offset().top});
+        }
+      });
       $('.ui.sidebar').sidebar('attach events', '.toc.item');
       $('.sub_menu').sticky({ context: '.post-index' });
     },
@@ -155,6 +160,9 @@ App = {
           $('.contact_btn').text("Failed to send");
         });
       }
+    },
+    commentaccordion: function(){
+      $('.comment_form').accordion('close', 0)
     }
   }
 };

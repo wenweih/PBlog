@@ -1,0 +1,5 @@
+:plain
+  var comment_count = parseInt($('.comment-count').text().match(/\d+/)) + 1;
+  $('.comment_form').accordion('close', 0)
+  $('.comment-count').text( comment_count + " 条评论")
+  $('.comment_form').after("#{escape_javascript(render partial: 'comments/comment', locals: { comment: @comment })}");
