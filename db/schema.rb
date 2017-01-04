@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170101061604) do
+ActiveRecord::Schema.define(version: 20170104034427) do
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
@@ -65,7 +65,8 @@ ActiveRecord::Schema.define(version: 20170101061604) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
-    t.integer  "counters",                 default: 0, null: false
+    t.integer  "counters",                 default: 0,           null: false
+    t.string   "state",                    default: "published"
     t.index ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end

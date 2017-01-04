@@ -15,6 +15,7 @@
 
 class Post < ApplicationRecord
   extend FriendlyId
+  include AASM
   attr_accessor :book_cover_url
   has_one :image, dependent: :destroy
   has_many  :likes, dependent:  :destroy
@@ -29,7 +30,7 @@ class Post < ApplicationRecord
 
   friendly_id :friend_url, :use => :slugged
 
-  default_scope { order(created_at: :desc) }
+  default_scope { where(state: 'published').order("created_at desc") }
 
   after_create do
     cover = Image.create(url: self.book_cover_url)
@@ -45,6 +46,17 @@ class Post < ApplicationRecord
         cover = Image.create(url: self.book_cover_url)
         self.image = cover
       end
+    end
+  end
+
+  aasm  :column => :state do
+    state :published
+    state :unpublished
+    event :publish do
+      transitions :from => :unpublished,  :to =>  :published
+    end
+    event :hide  do
+      transitions :from => :published,  :to =>  :unpublished
     end
   end
 

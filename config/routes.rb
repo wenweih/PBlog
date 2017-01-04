@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :tweets
   resources :contacts
   resources :comments, only: [:create]
-  resources :post, only: [:index,:show], path: '/blogs'
+  resources :post, only: [:index, :show, :update], path: '/blogs'
   match '/live', to: "post#index", as: :live_blog, blog_type: "live", via: [:get]
   match '/dev', to: "post#index", as: :dev_blog, blog_type: "dev", via: [:get]
   match '/book', to: "post#index", as: :book_blog, blog_type: "book", via: [:get]

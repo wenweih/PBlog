@@ -64,6 +64,8 @@ gem 'redis-rails' #Redis stores for Rack::Cache
 gem 'redis-objects' #将一些数据放入 Redis
 
 gem 'rails_emoji_picker'
+
+gem 'aasm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
