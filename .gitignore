@@ -38,3 +38,5 @@ bower.json
 public/uploads
 public/assets/
 .DS_Store
+
+config/database.yml
