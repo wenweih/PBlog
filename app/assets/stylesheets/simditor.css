@@ -756,5 +756,10 @@
 }
 .simditor .simditor-body img, .editor-style img {
   margin: 0 5px;
+  max-width: 100%;
+  height: auto;
   vertical-align: middle;
+  border: 0;
+  cursor: -webkit-zoom-in;
+  transition: all .25s ease-in-out;
 }
