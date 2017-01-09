@@ -4,10 +4,10 @@
       .ui.large.secondary.menu
         %a.toc.item
           %i.sidebar.icon
-        = link_to 'WENWEI HUANG', root_path, class:"item #{nav_active(path: 'home#index')}"
-        = link_to "BLOG", post_index_path, class:"item #{nav_active(path: 'post#index')}"
-        = link_to "RESUME","#",class:'item'
-        = link_to "PORTFOLIO","#",class:'item'
+        = link_to 'WENWEI HUANG', root_path, class:"top item #{nav_active(path: 'home#index')}"
+        = link_to "BLOG", post_index_path, class:"top item #{nav_active(path: 'post#index')}"
+        = link_to "RESUME", "/blogs/resume", class:'top item'
+        = link_to "PORTFOLIO","#",class:'top item'
   .sub_menu.ui.sticky
     .ui.container
       .ui.large.secondary.menu
