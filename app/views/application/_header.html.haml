@@ -9,6 +9,8 @@
         = link_to "RESUME","#",class:'item'
         = link_to "PORTFOLIO","#",class:'item'
         .right.item
+          .ui.floating.green.mini.message
+            Currently I'm available for hire.
           - if signed_in?
             = button_to '退出', sign_out_path, method: :delete, class: 'ui green inverted button'
             = button_to '后台管理', admin_users_path, method: :get, class: 'ui inverted blue button'
