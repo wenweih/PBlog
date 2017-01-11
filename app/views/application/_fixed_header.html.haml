@@ -8,11 +8,14 @@
         = link_to "BLOG", post_index_path, class:"top item #{nav_active(path: 'post#index')}"
         = link_to "RESUME", "/blogs/resume", class:'top item'
         = link_to "PORTFOLIO","#",class:'top item'
+        .right.item
+          .ui.floating.green.mini.message
+            = SettingsLogic.hire
   .sub_menu.ui.sticky
     .ui.container
       .ui.large.secondary.menu
-        = link_to '全部', post_index_path, class:'item'
+        = link_to '所有', post_index_path, class:'item'
         = link_to '生活', live_blog_path, class:'item'
-        = link_to '编程', dev_blog_path, class:'item'
-        = link_to '书评', book_blog_path, class:'item'
-        = link_to '动弹', tweets_path, class:'item'
+        = link_to '开发', dev_blog_path, class:'item'
+        = link_to '读书', book_blog_path, class:'item'
+        = link_to '话题', tweets_path, class:'item'
