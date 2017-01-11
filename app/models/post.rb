@@ -26,6 +26,8 @@ class Post < ApplicationRecord
   validates :friend_url,presence: true,uniqueness: true
   belongs_to :user,class_name: "User"
 
+  belongs_to :category
+
   acts_as_taggable_on :tags
 
   friendly_id :friend_url, :use => :slugged

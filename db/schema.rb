@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104034427) do
+ActiveRecord::Schema.define(version: 20170109032728) do
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "name"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20170104034427) do
     t.string   "recommand"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
@@ -59,14 +65,16 @@ ActiveRecord::Schema.define(version: 20170104034427) do
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "title"
     t.string   "friend_url"
-    t.text     "content",    limit: 65535
+    t.text     "content",     limit: 65535
     t.string   "slug"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
-    t.integer  "counters",                 default: 0,           null: false
-    t.string   "state",                    default: "published"
+    t.integer  "counters",                  default: 0,           null: false
+    t.string   "state",                     default: "published"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
     t.index ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
@@ -109,4 +117,5 @@ ActiveRecord::Schema.define(version: 20170104034427) do
   add_foreign_key "comments", "posts"
   add_foreign_key "images", "posts"
   add_foreign_key "likes", "posts"
+  add_foreign_key "posts", "categories"
 end

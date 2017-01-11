@@ -1,4 +1,4 @@
-app_root = '/Users/hww/work/freelance/my_page'
+app_root = '/home/hww/my_page'
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
@@ -16,6 +16,7 @@ pidfile "#{app_root}/tmp/pids/puma.pid"
 state_path "#{app_root}/tmp/pids/puma.state"
 bind "unix://#{app_root}/tmp/sockets/puma.sock"
 daemonize true
+stdout_redirect "#{app_root}/log/stdout", "#{app_root}/log/stderr"
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together

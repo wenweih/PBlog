@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :tweets
+  resources :tweets, only: [:index, :new]
   resources :contacts
   resources :comments, only: [:create]
   resources :post, only: [:index, :show, :update], path: '/blogs'
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   match '/dev', to: "post#index", as: :dev_blog, blog_type: "dev", via: [:get]
   match '/book', to: "post#index", as: :book_blog, blog_type: "book", via: [:get]
   resource :session, controller: "sessions", only: [:create, :destroy,  :new]
+
+  resources :categories
 
   post 'upload' => 'file_attach#post_image'
   get '/language/:locale', to: 'home#language', as: :change_locale
@@ -20,6 +22,11 @@ Rails.application.routes.draw do
     resources :blog_posts
     resources :book_reviews
     resources :resume_posts
+  end
+
+
+  resources :posts do
+    resources :archive, only: [:index]
   end
 
 end

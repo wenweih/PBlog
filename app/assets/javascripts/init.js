@@ -26,7 +26,7 @@ App = {
     App.initUI.initSemanticUITool();
     App.initUI.initHighLight();
     App.initUtil();
-    App.initGa();
+    // App.initGa();
     return;
   },
   sitePageInit: function(){

@@ -8,6 +8,17 @@ Bundler.require(*Rails.groups)
 
 module MyPage
   class Application < Rails::Application
+
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: true,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        request_specs: false
+      g.factory_girl dir: 'spec/factories'
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -22,11 +33,11 @@ module MyPage
     config.i18n.available_locales = ['zh-CN', 'en']
     config.i18n.fallbacks = true
 
-    config.cache_store = :redis_store, 'redis://127.0.0.1:6379/0/cache', { expires_in: 240.minutes }
+    config.cache_store = :redis_store, 'redis://127.0.0.1:6379/0/cache', { expires_in: 800.minutes }
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.autoload_paths << Rails.root.join('lib')
     config.active_record.raise_in_transactional_callbacks = true
-    config.lograge.enabled = false
+    config.lograge.enabled = true
   end
 end
