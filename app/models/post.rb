@@ -62,11 +62,4 @@ class Post < ApplicationRecord
     end
   end
 
-  def content_html
-    self.content
-  end
-
-  def sub_content
-     HTML_Truncator.truncate(content_html, 100, length_in_chars: true)
-   end
 end

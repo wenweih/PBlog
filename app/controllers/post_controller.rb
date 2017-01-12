@@ -5,10 +5,11 @@ class PostController < ApplicationController
   include Obfuscate
   def index
     @posts = current_user ? Post.unscoped.order("created_at desc")  : Post.all
+    @posts = params[:category].present? ? @posts.joins(:category).where('categories.id' => params[:category]) : @posts
     @posts = @posts.page(params[:page]).includes(:comments)
     @posts = params[:blog_type].present? ? @posts.tagged_with(params[:blog_type]) : @posts
-
   end
+  
   def show
     @post.increment(:counters,1).save();
     @like_count = @post.likes.count

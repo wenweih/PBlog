@@ -76,7 +76,7 @@ App = {
     initTyped: function(){
       if($('.home.index').length > 0){
         $('.person-description').typed({
-          strings: ['致力于 Web 全栈开发'],
+          strings: ['Aiming to build hight performance WebApp'],
           loop: true,
           showCursor: true,
           startDelay: 500,

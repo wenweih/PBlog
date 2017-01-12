@@ -24,9 +24,4 @@ Rails.application.routes.draw do
     resources :resume_posts
   end
 
-
-  resources :posts do
-    resources :archive, only: [:index]
-  end
-
 end
