@@ -94,6 +94,33 @@
   margin: 1rem 0 1rem 0;
   &>.container{
     &>.row{
+      &>.post_list_sidebar{
+        &>.categories{
+          &>.ui.header{
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #969696;
+          }
+          &>.ui.list{
+            &>.item{
+              margin-bottom: 10px;
+              line-height: 20px;
+              &>.category{
+                &>i{
+                  color: #969696 !important;
+                }
+                font-family: Songti SC,serif;
+                position: relative;
+                max-width: 236px;
+                vertical-align: middle;
+                top: 1px;
+                font-size: 14px;
+                color: #333 !important;
+              }
+            }
+          }
+        }
+      }
       &>.list{
         &>.item{
           border-bottom: 1px dashed #d9d9d9;
@@ -105,7 +132,12 @@
             margin: 8px 0;
           }
           &>.header{
+            font-family: Songti SC,serif;
             margin-top: 1rem;
+            display: inherit;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
             &> a{
               color: #555555 !important;
             }

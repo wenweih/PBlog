@@ -7,29 +7,18 @@
     .row
       .ten.wide.column.post_list.ui.list
         - @posts.each do |p|
-          .item
-            %time.timeago{ :datatime => "#{p.created_at}"}
-            %h3.ui.header
-              = link_to "#{p.title}",post_path(p), class:'post-link'
-              - if current_user
-                .right.floated.content
-                  = link_to post_path(p),  method: :patch, class: 'ui button' do
-                    - if p.published?
-                      屏蔽
-                    - else
-                      发布
-            .ui.horizontal.list
-              .item
-                %i.unhide.icon
-                #{p.counters}
-              .item
-                %i.comment.outline.icon
-                #{p.comments.size}
-              .item
-                %i.icon.time
-                #{p.created_at.strftime('%F')}
+          = render partial: 'post', locals: { p: p }
         = paginate @posts
       .six.wide.column.post_list_sidebar
         .most_read.ui.list
+        .categories
+          .ui.header
+            Post Category
+          .ui.list
+            - Category.all.each do |category|
+              .item
+                = link_to post_index_path(category: category.id), class:"category" do
+                  %i.book.icon
+                  = category.title
         .tag_listx
         .comment_list
