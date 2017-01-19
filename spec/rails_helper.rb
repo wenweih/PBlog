@@ -57,6 +57,8 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
+  config.include ActiveJob::TestHelper, type: :job
+
 end
 
 Shoulda::Matchers.configure do |config|
