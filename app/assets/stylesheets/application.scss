@@ -49,3 +49,14 @@ li{
     padding-left: 0 !important;
   }
 }
+
+p{
+  &>code{
+    padding: 2px 4px;
+    background-color: #f6f6f6;
+    border: none;
+    color: #657b83;
+    font-size: 12px;
+    white-space: pre-wrap;
+  }
+}
