@@ -50,10 +50,7 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 
 gem 'kaminari'
 
-gem "html_truncator", "~>0.2"
-
-#To annotate just your models:   annotate --exclude tests,fixtures,factories,serializers
-gem 'annotate' #Annotate Rails classes with schema and routes info
+# gem "html_truncator", "~>0.2"
 
 gem "rails_best_practices"
 
@@ -66,17 +63,29 @@ gem 'redis-objects' #将一些数据放入 Redis
 gem 'rails_emoji_picker'
 
 gem 'aasm'
+
+gem 'sidekiq'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# sendclound mail
+gem 'sendcloud_rails', '~> 0.0.1'
+
+# mail
+gem 'mailgun_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker'
 end
 
 group :development do
+  #To annotate just your models:   annotate --exclude tests,fixtures,factories,serializers
+  gem 'annotate' #Annotate Rails classes with schema and routes info
   gem "letter_opener"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -11,7 +11,9 @@
 #
 
 class Contact < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true, email: true
-  validates :message, presence: true
+  validates :name, :email, :message, presence: true
+  validates :email, email: true
+  after_create do
+    EmailJob.perform_now self
+  end
 end
