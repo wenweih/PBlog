@@ -21,6 +21,7 @@
             = link_to "#", remote: true, method: :delete, class:'ui green basic button like-btn' do
               %span.like_count  #{@like_count}
               %span Like
+          = social_share_button_tag(@post.title)
         %comments.comments
           .comment-head
             %span.comment-count
