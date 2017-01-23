@@ -9,6 +9,8 @@
 //=  require highlight
 //= require modernizr.custom
 //= require notification
+//= require social-share-button
+//= require social-share-button/wechat
 window.App || (window.App = {});
 App = {
   init: function(){

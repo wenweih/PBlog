@@ -31,6 +31,13 @@
             font-weight: bold;
             line-height: 1.5;
           }
+          &>.like{
+            display: inline;
+          }
+          &>.social-share-button{
+            display: inline;
+            float: right;
+          }
         }
         .comments{
           &>.comment-head{
