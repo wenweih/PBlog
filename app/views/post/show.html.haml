@@ -18,9 +18,12 @@
             - @post.tag_list.each do |tag|
               = link_to tag, "#", class: 'ui label'
           .like
-            = link_to "#", remote: true, method: :delete, class:'ui green basic button like-btn' do
+            = link_to "javascript:void(0)", remote: true, method: :delete, class:'ui green basic button like-btn' do
               %span.like_count  #{@like_count}
               %span Like
+            - if request.path.include? "resume"
+              = link_to download_pdf_path, class: 'ui green basic button' do
+                %span DOWNLOAD CV
           = social_share_button_tag(@post.title)
         %comments.comments
           .comment-head

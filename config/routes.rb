@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   post 'upload' => 'file_attach#post_image'
   get '/language/:locale', to: 'home#language', as: :change_locale
+  get '/download_pdf', to: 'home#download_pdf'
 
   namespace :admin do
     resources :users

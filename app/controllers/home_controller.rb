@@ -11,4 +11,12 @@ class HomeController < ApplicationController
       redirect_to '/'
     end
   end
+
+  def download_pdf
+    send_file(
+      "#{Rails.root}/public/huangwenwei_CV.pdf",
+      filename: "huangwenwei_CV.pdf",
+      type: "application/pdf"
+    )
+  end
 end
