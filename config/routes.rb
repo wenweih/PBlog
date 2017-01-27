@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :blog_posts
     resources :book_reviews
     resources :resume_posts
+    resources :categories
   end
 
 end

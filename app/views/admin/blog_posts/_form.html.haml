@@ -1,4 +1,5 @@
 - @tags = ActsAsTaggableOn::Tag.order(taggings_count: :desc)
+- categories = Category.all
 = form_for([namespace, page.resource], html: { class: "form" }) do |f|
   - if page.resource.errors.any?
     #error_explanation
@@ -18,6 +19,7 @@
         .post-content
           = render "application/editor", f: f
   = f.select  :tag_list, @tags.collect { |t| [t.name,t.name] }, {}, { :multiple => "multiple" }
+  = f.select  :category, categories.collect { |t| [t.title, t.title] }, {:selected => page.resource.try(:category).try(:title)}
   = f.text_field :friend_url,placeholder: "friendly_url"
 = render "application/dropzone"
 .form-actions
