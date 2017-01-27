@@ -9,3 +9,5 @@ $("#blog_post_tag_list").select2({
   tags: true,
   tokenSeparators: [',', ' ']
 });
+
+$("#blog_post_category").select2();
