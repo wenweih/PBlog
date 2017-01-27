@@ -17,9 +17,17 @@
             Post Category
           .ui.list
             - Category.all.each do |category|
-              .item
-                = link_to post_index_path(category: category.id), class:"category" do
-                  %i.book.icon
-                  = category.title
-        .tag_listx
+              - cache category do
+                .item
+                  = link_to post_index_path(category: category.id), class:"category" do
+                    %i.book.icon
+                    = category.title
+        .tag_list
+          .ui.header
+            Tags
+          .ui.labels
+            - @tags.each do |tag|
+              - cache tag do
+                = link_to "javascript:void(0)", class: 'ui basic label' do
+                  = tag.name
         .comment_list

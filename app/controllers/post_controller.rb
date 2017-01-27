@@ -8,6 +8,7 @@ class PostController < ApplicationController
     @posts = params[:category].present? ? @posts.joins(:category).where('categories.id' => params[:category]) : @posts
     @posts = @posts.page(params[:page]).includes(:comments)
     @posts = params[:blog_type].present? ? @posts.tagged_with(params[:blog_type]) : @posts
+    @tags = ActsAsTaggableOn::Tag.order(taggings_count: :desc)
   end
 
   def show
