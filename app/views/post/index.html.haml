@@ -6,8 +6,9 @@
   .stackable.very.relaxed.ui.grid.container
     .row
       .ten.wide.column.post_list.ui.list
-        - @posts.each do |p|
-          = render partial: 'post', locals: { p: p }
+        - @posts.each do |p |
+          - cache p do
+            = render partial: 'post', locals: { p: p }
         = paginate @posts
       .six.wide.column.post_list_sidebar
         .most_read.ui.list

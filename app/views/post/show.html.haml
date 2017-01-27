@@ -9,22 +9,23 @@
     .row
       .sixteen.wide.column
         %article.post-detail
-          %h1.ui.header.post-header
-            = @post.title
-          .simditor.override-simditor
-            .post-content.description.simditor-body.override-simditor-body
-              = raw @post.content
-          .post-tag.ui.tag.labels
-            - @post.tag_list.each do |tag|
-              = link_to tag, "#", class: 'ui label'
-          .like
-            = link_to "javascript:void(0)", remote: true, method: :delete, class:'ui green basic button like-btn' do
-              %span.like_count  #{@like_count}
-              %span Like
-            - if request.path.include? "resume"
-              = link_to download_pdf_path, class: 'ui green basic button' do
-                %span DOWNLOAD CV
-          = social_share_button_tag(@post.title)
+          - cache @post do
+            %h1.ui.header.post-header
+              = @post.title
+            .simditor.override-simditor
+              .post-content.description.simditor-body.override-simditor-body
+                = raw @post.content
+            .post-tag.ui.tag.labels
+              - @post.tag_list.each do |tag|
+                = link_to tag, "#", class: 'ui label'
+            .like
+              = link_to "javascript:void(0)", remote: true, method: :delete, class:'ui green basic button like-btn' do
+                %span.like_count  #{@like_count}
+                %span Like
+              - if request.path.include? "resume"
+                = link_to download_pdf_path, class: 'ui green basic button' do
+                  %span DOWNLOAD CV
+            = social_share_button_tag(@post.title)
         %comments.comments
           .comment-head
             %span.comment-count
@@ -37,4 +38,5 @@
               .ui.segment
                 = render partial: 'comments/form', locals: { post: @post }
           - @post.comments.each_with_index do |comment|
-            = render partial: 'comments/comment', locals: { comment: comment }
+            - cache comment do
+              = render partial: 'comments/comment', locals: { comment: comment }
