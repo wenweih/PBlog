@@ -9,12 +9,13 @@ class PostController < ApplicationController
     @posts = @posts.page(params[:page]).includes(:comments)
     @posts = params[:blog_type].present? ? @posts.tagged_with(params[:blog_type]) : @posts
   end
-  
+
   def show
     @post.increment(:counters,1).save();
     @like_count = @post.likes.count
     gon.id = params[:id]
     gon.like_id = encrypt @like_count
+    fresh_when(@post)
   end
 
   def update
