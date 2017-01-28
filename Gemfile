@@ -46,7 +46,7 @@ gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'http_accept_language'
 #
 gem 'acts-as-taggable-on', '~> 4.0'
-gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem 'friendly_id' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 gem 'kaminari'
 

@@ -102,10 +102,20 @@
   &>.container{
     &>.row{
       &>.post_list_sidebar{
-        &>.tag_list{
-          margin-top: 5rem;
+        &>.tag_list, .categories{
+          margin-top: 1rem;
         }
-        &>.categories, .tag_list{
+        &>.categories, .tag_list, .tweet_list{
+          &>.tweet_header{
+            display: inline;
+          }
+          &>.floated{
+            font-size: 12px !important;
+          }
+          &>.floated:hover{
+            color: #57cdf9 !important;
+          }
+          border-bottom: 1px solid #f0f0f0;
           &>.ui.header{
             margin-bottom: 10px;
             font-size: 14px;
@@ -126,6 +136,18 @@
             }
           }
           &>.ui.list{
+            &> p{
+              margin: 0 0 8px;
+              font-size: 13px;
+              line-height: 24px;
+              font-family: Songti SC,serif;
+              color: #333;
+              padding: 1px 5px 1px 5px;
+              &>.time{
+                color: #969696;
+                margin-right: 10px;
+              }
+            }
             &>.item{
               margin-bottom: 10px;
               line-height: 20px;

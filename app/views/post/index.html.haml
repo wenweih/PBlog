@@ -11,10 +11,31 @@
             = render partial: 'post', locals: { p: p }
         = paginate @posts
       .six.wide.column.post_list_sidebar
+        .tweet_list
+          .ui.header.tweet_header
+            Thinking Tweet
+          = link_to tweets_path, class: 'ui right floated header' do
+            MORE >>
+          .ui.list
+            - @tweets.each do |tweet|
+              - cache tweet do
+                %p.item
+                  %span.time
+                    #{tweet.created_at.strftime('%F %H:%M')}
+                    说:
+                  = truncate tweet.content, length: 77
         .most_read.ui.list
+        .tag_list
+          .ui.header
+            Posts Tags
+          .ui.labels
+            - @tags.each do |tag|
+              - cache tag do
+                = link_to "javascript:void(0)", class: 'ui basic label' do
+                  = tag.name
         .categories
           .ui.header
-            Post Category
+            Post Categories
           .ui.list
             - Category.all.each do |category|
               - cache category do
@@ -22,12 +43,4 @@
                   = link_to post_index_path(category: category.id), class:"category" do
                     %i.book.icon
                     = category.title
-        .tag_list
-          .ui.header
-            Tags
-          .ui.labels
-            - @tags.each do |tag|
-              - cache tag do
-                = link_to "javascript:void(0)", class: 'ui basic label' do
-                  = tag.name
         .comment_list
