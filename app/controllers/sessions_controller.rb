@@ -5,7 +5,7 @@ class SessionsController < Clearance::SessionsController
 
     sign_in(@user) do |status|
       if status.success?
-        redirect_to admin_users_path, notice:"Sign in successfully" and return
+        redirect_to root_path, notice:"Sign in successfully" and return
       else
         redirect_to :back, notice: "#{status.failure_message}"
       end

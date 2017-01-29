@@ -9,5 +9,7 @@
 #
 
 class Tweet < ApplicationRecord
+  obfuscate_id :spin => 892387231295436
   validates :content, presence: true
+  default_scope { order(created_at: :asc) }
 end

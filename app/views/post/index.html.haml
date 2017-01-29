@@ -7,7 +7,7 @@
     .row
       .ten.wide.column.post_list.ui.list
         - @posts.each do |p |
-          - cache p do
+          - cache [p, current_user] do
             = render partial: 'post', locals: { p: p }
         = paginate @posts
       .six.wide.column.post_list_sidebar
@@ -16,10 +16,15 @@
             Thinking Tweet
           = link_to tweets_path, class: 'ui right floated header' do
             MORE >>
+          - if current_user
+            .tweet_form
+            = form_for Tweet.new, :html => { class: 'tweet ui form' } do |f|
+              = f.text_area :content, placeholder: 'tweet content'
+              = f.submit "create tweet", class: 'ui basic fluid button'
           .ui.list
             - @tweets.each do |tweet|
               - cache tweet do
-                %p.item
+                = link_to "javascript:void(0)", class: 'item', remote: true do
                   %span.time
                     #{tweet.created_at.strftime('%F %H:%M')}
                     说:

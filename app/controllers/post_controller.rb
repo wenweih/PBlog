@@ -1,6 +1,7 @@
 class PostController < ApplicationController
 
   before_action :set_post, only: [:show, :update]
+  before_action :authenticate_admin, only: [:update]
 
   include Obfuscate
   def index
@@ -10,7 +11,7 @@ class PostController < ApplicationController
     @posts = params[:blog_type].present? ? @posts.tagged_with(params[:blog_type]) : @posts
 
     @tags = ActsAsTaggableOn::Tag.order(taggings_count: :desc)
-    @tweets = Tweet.last(5).reverse
+    @tweets = Tweet.last(8).reverse
   end
 
   def show

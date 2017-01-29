@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     end
     I18n.locale = l || I18n.locale
   end
+
+  def authenticate_admin
+    signed_in? ? (admin_users_path) : (redirect_to root_path)
+  end
+
   rescue_from ActiveRecord::RecordInvalid do |err|
     render_404
     # render json: { error: 'RecordInvalid', message: "#{err}" }, status: 400

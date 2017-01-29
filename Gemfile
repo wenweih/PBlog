@@ -50,10 +50,6 @@ gem 'friendly_id' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 gem 'kaminari'
 
-# gem "html_truncator", "~>0.2"
-
-gem "rails_best_practices"
-
 #cache
 gem 'redis', '~>3.2' #A Ruby client library for Redis
 gem 'redis-namespace' #This gem adds a Redis::Namespace class which can be used to namespace Redis keys.
@@ -68,13 +64,12 @@ gem 'sidekiq'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# sendclound mail
-gem 'sendcloud_rails', '~> 0.0.1'
-
 # mail
 gem 'mailgun_rails'
 
 gem 'social-share-button'
+
+gem "obfuscate_id", git: 'https://github.com/nadnerb/obfuscate_id'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :tweets, only: [:index, :new]
+  resources :tweets, only: [:index, :new, :create, :show]
   resources :contacts
   resources :comments, only: [:create]
   resources :post, only: [:index, :show, :update], path: '/blogs'

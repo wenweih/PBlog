@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, only: [:create, :new]
 
   def index
     @tweets = Tweet.all
@@ -12,19 +13,17 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
   end
 
-  def edit
-  end
-
   def create
+
     @tweet = Tweet.new(tweet_params)
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
+        format.js { render :file => "tweets/create.js.haml" }
+        format.html { redirect_to post_index_path, notice: 'Tweet was successfully created.' }
         format.json { render :show, status: :created, location: @tweet }
       else
-        format.html { render :new }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+        format.html { redirect_to post_index_path }
       end
     end
   end
