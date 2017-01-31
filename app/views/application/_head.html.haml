@@ -3,7 +3,7 @@
   %meta{:name => "viewport", :content => "width=device-width,initial-scale=1.0,maximum-scale=1.0"}
   %title
     = if content_for?(:title) then yield(:title) + ' - ' end
-    黄文威
+    字里行间
   %meta{name:'Description',content:"#{yield_meta_tag(:description, 'Default description')}"}
   %meta{name:'Keywords',content:"#{yield_meta_tag(:keywords, 'defaults,ruby,rails')}"}
   = favicon_link_tag 'favicon.ico'

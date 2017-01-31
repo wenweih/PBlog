@@ -60,6 +60,9 @@ App = {
       $(document).on('scroll', function(){
         if ($(this).scrollTop() == 0){
           $('.headeroom').addClass('header-transparent');
+          $(".headeroom").find("a").css({
+            color: '#fff'
+          });
         }else {
           $('.headeroom').removeClass('header-transparent');
           $(".headeroom").css({
@@ -78,7 +81,7 @@ App = {
     initTyped: function(){
       if($('.home.index').length > 0){
         $('.person-description').typed({
-          strings: ['Aiming to build hight performance WebApp'],
+          strings: ['Building Hight Performance WebApp'],
           loop: true,
           showCursor: true,
           startDelay: 500,

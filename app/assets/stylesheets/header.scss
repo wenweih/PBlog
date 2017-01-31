@@ -21,11 +21,13 @@
     }
     a {
       background:none !important;
+      // color: #4D5139;
       color: #fff;
+      font-weight: bold;
     }
     a.item:hover {
       background:none !important;
-      color: #57cdf9 !important;
+      color: #4D5139 !important;
     }
   }
 }
@@ -45,7 +47,7 @@
     }
     a.item:hover {
       background:none !important;
-      color: #57cdf9 !important;
+      color: #4D5139 !important;
     }
   }
 }

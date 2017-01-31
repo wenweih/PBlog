@@ -7,6 +7,6 @@ class NotificationsMailer < ApplicationMailer
   #
   def contact contact
     @contact = contact
-    mail to: "mr.huangwenwei@gmail.com", subject: 'contact message', body: @contact.message
+    mail to: "mr.huangwenwei@gmail.com", subject: 'contact message'
   end
 end

@@ -1,8 +1,6 @@
 $home-title-color: #999aa1;
 @mixin background{
   @extend %textaligncenter;
-  @include animation(backgroundScroll 5.0s alternate infinite);
-  background-size: cover;
 }
 
 %title{
@@ -46,10 +44,9 @@ $home-title-color: #999aa1;
   height: 100vh;
 }
 .masthead.segment{
-  @include background-image(url("/bg-img.jpg"));
   @include background;
-  background-attachment: fixed;
   opacity: 0.85;
+  background-color: #4F726C;
   .ui.container{
     &>.scroll{
       display: inline-block;
@@ -96,7 +93,7 @@ $home-title-color: #999aa1;
   min-height: 100vh;
   background-attachment: fixed;
   opacity: 0.85;
-  background-color: #2EA9DF;
+  background-color: #77969A;
   background-size: cover;
   background-repeat:no-repeat;
   background-position:center;
@@ -122,7 +119,7 @@ $home-title-color: #999aa1;
 }
 .contact.segment{
   @extend %textaligncenter;
-  background-color: #00AA90;
+  background-color: #78C2C4;
   background-attachment: fixed;
   opacity: 0.85;
   height: 100vh;

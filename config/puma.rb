@@ -14,7 +14,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 pidfile "#{app_root}/tmp/pids/puma.pid"
 state_path "#{app_root}/tmp/pids/puma.state"
-# bind "unix://#{app_root}/tmp/sockets/puma.sock"
+bind "unix://#{app_root}/tmp/sockets/puma.sock"
 daemonize true
 stdout_redirect "#{app_root}/log/stdout", "#{app_root}/log/stderr"
 
