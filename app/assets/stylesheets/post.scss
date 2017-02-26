@@ -106,6 +106,10 @@
           margin-top: 1rem;
         }
         &>.categories, .tag_list, .tweet_list{
+          padding: 10px;
+          background: #fff;
+          border-radius: 4px;
+          border: 1px solid #E3E9ED;
           &>.tweet_header{
             display: inline;
           }
@@ -167,9 +171,16 @@
           }
         }
       }
+      &>.post_list{
+        &>.column{
+          text-align: center !important;
+        }
+      }
       &>.list{
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #E3E9ED;
         &>.item{
-          border-bottom: 1px dashed #d9d9d9;
           padding-bottom: 17px;
           .create_at{
             margin: 8px 0;

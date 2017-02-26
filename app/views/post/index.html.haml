@@ -5,11 +5,12 @@
 .post-index
   .stackable.very.relaxed.ui.grid.container
     .row
-      .ten.wide.column.post_list.ui.list
+      .ten.wide.column.post_list.ui.list.divided
         - @posts.each do |p |
           - cache [p, current_user] do
             = render partial: 'post', locals: { p: p }
-        = paginate @posts
+        .column
+          = paginate @posts
       .six.wide.column.post_list_sidebar
         .tweet_list
           .ui.header.tweet_header

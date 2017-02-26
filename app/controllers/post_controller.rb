@@ -18,7 +18,7 @@ class PostController < ApplicationController
     @post.increment(:counters,1).save();
     @like_count = @post.likes.count
     gon.id = params[:id]
-    gon.like_id = encrypt @like_count
+    # gon.like_id = encrypt @like_count
     fresh_when(@post)
   end
 
