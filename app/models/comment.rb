@@ -6,4 +6,8 @@ class Comment < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :content, presence: true
+
+  after_create do
+    EmailJob.perform_now "comment", self
+  end
 end

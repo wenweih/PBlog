@@ -1,0 +1,4 @@
+%h3 #{@comment.name}(#{@comment.email}) 评论了文章: #{@comment.post.title}
+%p #{@comment.content}
+%br
+= link_to @comment.post.title, post_url(@comment.post)

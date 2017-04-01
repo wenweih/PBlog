@@ -1,7 +1,9 @@
 class EmailJob < ApplicationJob
   queue_as :default
 
-  def perform(contact)
-    NotificationsMailer.contact(contact).deliver_now
+  # type: email type, comment or contact string
+  # object: send email object, comment or contact object
+  def perform(type, object)
+    NotificationsMailer.send(type, object).deliver_now
   end
 end
