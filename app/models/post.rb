@@ -28,6 +28,8 @@ class Post < ApplicationRecord
 
   belongs_to :category
 
+  paginates_per 15
+
   acts_as_taggable_on :tags
 
   friendly_id :friend_url, :use => :slugged
