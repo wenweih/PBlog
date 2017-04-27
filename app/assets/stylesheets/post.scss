@@ -101,7 +101,11 @@
   margin: 1rem 0 1rem 0;
   &>.container{
     &>.row{
+      width: 1127px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
       &>.post_list_sidebar{
+        padding-right: 0 !important;
         &>.tag_list, .categories{
           margin-top: 1rem;
         }
