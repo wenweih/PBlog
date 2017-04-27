@@ -81,7 +81,7 @@ App = {
     initTyped: function(){
       if($('.home.index').length > 0){
         $('.person-description').typed({
-          strings: ['Building Hight Performance WebApp'],
+          strings: ['Building Hight Performance Software'],
           loop: true,
           showCursor: true,
           startDelay: 500,
