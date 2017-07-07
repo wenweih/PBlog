@@ -1,9 +1,10 @@
 //= require headroom
 //= require jQuery.headroom
-//= require semantic-ui/accordion.js
-//= require semantic-ui/form.js
-//= require semantic-ui/sidebar.js
-//= require semantic-ui/sticky.js
+//= require semantic-ui/accordion
+//= require semantic-ui/form
+//= require semantic-ui/sidebar
+//= require semantic-ui/sticky
+//= require semantic-ui/site
 //= require jquery.timeago
 //= require jquery.timeago.zh-CN
 //= require jquery.timeago.en
