@@ -56,8 +56,6 @@ gem 'redis-namespace' #This gem adds a Redis::Namespace class which can be used 
 gem 'redis-rails' #Redis stores for Rack::Cache
 gem 'redis-objects' #将一些数据放入 Redis
 
-gem 'rails_emoji_picker'
-
 gem 'aasm'
 
 gem 'sidekiq'
