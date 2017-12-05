@@ -84,6 +84,13 @@ group :development do
   gem "letter_opener"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  # Deployment
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-rvm"
+  gem "capistrano3-puma"
+  gem "capistrano-sidekiq", github: "LcpMarvel/capistrano-sidekiq"
+  gem "capistrano-db-tasks", require: false
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
