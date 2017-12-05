@@ -46,7 +46,7 @@ set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
 set :puma_bind, "tcp://0.0.0.0:9292"
 set :puma_default_control_app, "unix://#{shared_path}/tmp/sockets/pumactl.sock"
-set :puma_conf, "#{shared_path}/puma.rb"
+set :puma_conf, "#{shared_path}/config/puma.rb"
 set :puma_access_log, "#{shared_path}/log/puma_access.log"
 set :puma_error_log, "#{shared_path}/log/puma_error.log"
 set :puma_role, :app
@@ -60,37 +60,14 @@ set :puma_worker_timeout, 30
 
 set :bundle_binstubs, false
 set :bundle_flags, "--deployment"
-#
-# set :sidekiq_queue, {
-#   default: :web,
-#   daily_report: :web,
-#   publishers: :web,
-#   migration: :migration,
-# }
-
 set :sidekiq_default_hooks, true
 set :sidekiq_pid, File.join(shared_path, 'tmp', 'pids', 'sidekiq.pid') # ensure this path exists in production before deploying.
-set :sidekiq_env,fetch(:rack_env, fetch(:rails_env, fetch(:stage)))
 set :sidekiq_log, File.join(shared_path, 'log', 'sidekiq.log')
-set :sidekiq_options, nil
-set :sidekiq_require, nil
-set :sidekiq_tag, nil
-set :sidekiq_config, 'config/sidekiq.yml' # if you have a config/sidekiq.yml, do not forget to set this.
-set :sidekiq_queue, "default"
 set :sidekiq_timeout, 10
 set :sidekiq_role, :app
 set :sidekiq_processes, 1
-set :sidekiq_options_per_process, nil
-set  :sidekiq_concurrency, -> { fetch(:stage).to_s == "staging" ? 5 : nil }
-set :sidekiq_monit_templates_path, 'config/deploy/templates'
-set :sidekiq_monit_conf_dir, '/etc/monit/conf.d'
-set :sidekiq_monit_use_sudo, true
-set :monit_bin, '/usr/bin/monit'
-set :sidekiq_monit_default_hooks, true
-set  :sidekiq_service_name, "sidekiq_#{fetch(:application)}_#{fetch(:sidekiq_env)}"
-set  :sidekiq_cmd, "#{fetch(:bundle_cmd, "bundle")} exec sidekiq" # Only for capistrano2.5
-set :sidekiqctl_cmd, "#{fetch(:bundle_cmd, "bundle")} exec sidekiqctl" # Only for capistrano2.5
-set :sidekiq_user, nil #user to run sidekiq as
+set :sidekiq_queue, "default"
+set :sidekiq_concurrency, -> { fetch(:stage).to_s == "staging" ? 5 : nil }
 
 namespace :deploy do
 
@@ -98,7 +75,6 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
     end
-
     invoke! 'sidekiq:restart'
   end
 
@@ -119,10 +95,10 @@ namespace :deploy do
       upload! File.new('config/database.example.yml'), "#{deploy_to}/shared/config/database.yml"
       upload! File.new('config/secrets.example.yml'), "#{deploy_to}/shared/config/secrets.yml"
       upload! File.new('config/app.example.yml'), "#{deploy_to}/shared/config/app.yml"
-
       info "Now edit the config files in #{shared_path}/config."
     end
   end
+
 end
 
 set :git_branch, ask("请输入部署分支: ", `git branch | sed -n '/\* /s///p'`.chomp.strip)
