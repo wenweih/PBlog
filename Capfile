@@ -17,7 +17,8 @@ require "capistrano/rails"
 require 'capistrano/rails/migrations'
 require 'capistrano/rails/assets'
 require "capistrano/sidekiq"
-require "capistrano/puma"
+require 'capistrano/puma'
+install_plugin Capistrano::Puma, load_hooks: false  # Default puma tasks
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }

@@ -60,31 +60,49 @@ set :puma_worker_timeout, 30
 
 set :bundle_binstubs, false
 set :bundle_flags, "--deployment"
+#
+# set :sidekiq_queue, {
+#   default: :web,
+#   daily_report: :web,
+#   publishers: :web,
+#   migration: :migration,
+# }
 
-set :sidekiq_queue, {
-  default: :web,
-  daily_report: :web,
-  publishers: :web,
-  migration: :migration,
-  car_publisher: :car_publisher
-}
-
-set :sidekiq_concurrency, -> { fetch(:stage).to_s == "staging" ? 5 : nil }
+set :sidekiq_default_hooks, true
+set :sidekiq_pid, File.join(shared_path, 'tmp', 'pids', 'sidekiq.pid') # ensure this path exists in production before deploying.
+set :sidekiq_env,fetch(:rack_env, fetch(:rails_env, fetch(:stage)))
+set :sidekiq_log, File.join(shared_path, 'log', 'sidekiq.log')
+set :sidekiq_options, nil
+set :sidekiq_require, nil
+set :sidekiq_tag, nil
+set :sidekiq_config, 'config/sidekiq.yml' # if you have a config/sidekiq.yml, do not forget to set this.
+set :sidekiq_queue, "default"
+set :sidekiq_timeout, 10
+set :sidekiq_role, :app
+set :sidekiq_processes, 1
+set :sidekiq_options_per_process, nil
+set  :sidekiq_concurrency, -> { fetch(:stage).to_s == "staging" ? 5 : nil }
+set :sidekiq_monit_templates_path, 'config/deploy/templates'
+set :sidekiq_monit_conf_dir, '/etc/monit/conf.d'
+set :sidekiq_monit_use_sudo, true
+set :monit_bin, '/usr/bin/monit'
+set :sidekiq_monit_default_hooks, true
+set  :sidekiq_service_name, "sidekiq_#{fetch(:application)}_#{fetch(:sidekiq_env)}"
+set  :sidekiq_cmd, "#{fetch(:bundle_cmd, "bundle")} exec sidekiq" # Only for capistrano2.5
+set :sidekiqctl_cmd, "#{fetch(:bundle_cmd, "bundle")} exec sidekiqctl" # Only for capistrano2.5
+set :sidekiq_user, nil #user to run sidekiq as
 
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # invoke 'unicorn:restart'
-      # invoke 'foreman:restart'
     end
 
-    invoke 'sidekiq:restart'
+    invoke! 'sidekiq:restart'
   end
 
   after :restart, :"puma:restart"
-  after :publishing, :restart
 
   after :restart, :clear_cache do
     on roles(:app), in: :groups, limit: 3, wait: 10 do

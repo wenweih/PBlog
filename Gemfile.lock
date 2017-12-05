@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/LcpMarvel/capistrano-sidekiq.git
-  revision: 33293e8b7a6c7bb14c03f4fa12fa0b6dad09439d
-  specs:
-    capistrano-sidekiq (0.5.4)
-      capistrano
-      sidekiq (>= 3.4)
-
-GIT
   remote: https://github.com/nadnerb/obfuscate_id
   revision: b3a6b9ae393a965f5027d94790fb8121b63420af
   specs:
@@ -104,6 +96,9 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano-sidekiq (0.20.0)
+      capistrano (>= 3.9.0)
+      sidekiq (>= 3.4)
     capistrano3-puma (3.1.1)
       capistrano (~> 3.7)
       capistrano-bundler
@@ -366,7 +361,7 @@ DEPENDENCIES
   capistrano-db-tasks
   capistrano-rails
   capistrano-rvm
-  capistrano-sidekiq!
+  capistrano-sidekiq
   capistrano3-puma
   clearance
   coffee-rails (~> 4.2)
