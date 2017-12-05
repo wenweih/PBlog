@@ -1,5 +1,5 @@
 # PBlog
-A awesome personal website based on Ruby on Rails and Semantic-UI  
+A awesome personal website based on Ruby on Rails and Semantic-UI
 ## Features
 - SEO friendly
 - Manage you posts and resume
@@ -8,18 +8,19 @@ A awesome personal website based on Ruby on Rails and Semantic-UI
 - Manage comments, contract messages on you own without any limit
 
 ## Getting Started
-Now, with a few command and modify some description, you can own a geek personal webpage, here we go.  
+Now, with a few command and modify some description, you can own a geek personal webpage, here we go.
 ### Prerequisites
-PBlog is a Ruby on Rails webApp. We assume a live *nix service with Rails environment.  
+PBlog is a Ruby on Rails webApp. We assume a live *nix service with Rails environment.
 
 - Ruby (>2.3.1)
 - Mysql (> 14)
 - Nginx
-- [pow](https://github.com/basecamp/pow) a tool for MacOS user developer Rack App  
+- Redis
+- [pow](https://github.com/basecamp/pow) a tool for MacOS user developer Rack App
   > not necessary (Zero-configuration Rack server for MacOS)
 
 ## installing
-A step by step introduce to run in local machine and deploy to server. Deadly simple! 😂  
+A step by step introduce to run in local machine and deploy to server. Deadly simple! 😂
 
 ```
 // modify config/database.yml configuration
@@ -30,33 +31,32 @@ rails db:setup
 ```
 
 ### Development
-- Pow: ```ln -s the_path_of_PBlog ~/.pow/blog```  
+- Pow: ```ln -s the_path_of_PBlog ~/.pow/blog```
   now you can visit ```blog.dev```
-- or ```rails s```  
+- or ```rails s```
   now you can visit ```localhost:3000```
 
 ### Production
+[Capistrano](http://capistranorb.com) is a best tool to deploy Rails project.
+before deploy, you should modify ```config/app.example.yml``` and,  ```config/database.example.yml``` to fix your own. and then modify server ip in ```config/deploy/production.rb``` file.
+run flow command int your repo root directory:
+```shell
+bundle exec cap production deploy:config  // upload config to server
+bundle exec cap production puma:config    // upload puma config to server
+bundle exec cap production deploy         // clone and compile static assets and db migrate
+bundle exec cap production deploy:restart // start blog service
 ```
-// modify config/database.yml configuration
-git clone https://github.com/wenweih/PBlog.git
-cd PBlog
-bundle install
-RAILS_ENV=production rails db:setup
-RAILS_ENV=production rails assets:precompile
-RAILS_ENV=production rake secret
-// after generate a random string, replace config/secrets.yml with is
-RAILS_ENV=production puma -C config/puma.rb
-```
+
 ## Screenshot
-PC  
-![home index](./doc/show.png)  
+PC
+![home index](./doc/show.png)
 
-![home index](./doc/show-2.gif)  
+![home index](./doc/show-2.gif)
 
-![home index](./doc/post-index.gif)  
+![home index](./doc/post-index.gif)
 
 Mobile
 
-![home index](./doc/mobile-index.png)  
+![home index](./doc/mobile-index.png)
 
-![home index](./doc/mobile-post-show.png)  
+![home index](./doc/mobile-post-show.png)
