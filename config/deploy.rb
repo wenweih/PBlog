@@ -68,6 +68,8 @@ set :sidekiq_processes, 1
 set :sidekiq_queue, "default"
 set :sidekiq_concurrency, -> { fetch(:stage).to_s == "staging" ? 5 : nil }
 
+set :keep_assets, 2
+
 namespace :deploy do
 
   desc 'Restart application'
