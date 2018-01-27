@@ -1,10 +1,12 @@
 # config/application.yml
 defaults: &defaults
-  hire: "Currently I'm available for hire."
-  mail_key: 'xxxx'
-  mail_domain: 'xxx'
+  mail_key: ''
+  mail_domain: ''
+  hire: "Deep Work"
+  #hire: "I am available for hire."
+  encryption_key: ""
   admin:
-    email: xxx@gmail.com
+    email: 
     pwd: xxx
 
 development:

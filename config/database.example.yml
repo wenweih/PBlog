@@ -13,7 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
+  username: 
   password:
   socket: /var/run/mysqld/mysqld.sock
 
@@ -50,5 +50,3 @@ test:
 production:
   <<: *default
   database: my_page_production
-  username:
-  password:
