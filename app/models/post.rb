@@ -28,7 +28,7 @@ class Post < ApplicationRecord
 
   belongs_to :category
 
-  paginates_per 15
+  paginates_per 20
 
   acts_as_taggable_on :tags
 
