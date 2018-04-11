@@ -29,7 +29,7 @@
                   %span.time
                     #{tweet.created_at.strftime('%F %H:%M')}
                     说:
-                  = truncate tweet.content, length: 77
+                  = truncate tweet.content, length: 200
         .most_read.ui.list
         .tag_list
           .ui.header
