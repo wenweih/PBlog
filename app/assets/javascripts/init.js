@@ -85,7 +85,7 @@ App = {
     initTyped: function(){
       if($('.home.index').length > 0){
         $('.person-description').typed({
-          strings: ['Building Hight Performance Software'],
+          strings: ['Enjoy coding, Happy life'],
           loop: true,
           showCursor: true,
           startDelay: 500,
@@ -162,7 +162,7 @@ App = {
     messageForm:  function(){
       var $form = $('.contact_form');
       if($form.form('is valid')){
-        $(this).addClass('disabled');
+        $(this).addClass('disabled').prop('disabled', true);
       }else{
         $form.submit(function(e){
           e.preventDefault();

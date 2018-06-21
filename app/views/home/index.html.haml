@@ -6,7 +6,7 @@
     .ui.text.container
       %h1.ui.inverted.header
         %span.person-title
-          思考、实践、学习、总结
+          -# What's Going On
         %div.typedjs
           %p.person-description
       .ui.fluid.horizontal.list
@@ -22,9 +22,7 @@
             = image_tag("/idnetity.gif",class:'self-info-img ui avatar small image')
           .brief-itro-desc
             %p
-              我叫黄文威
-            %p
-              广东人士，15年毕业于广州某所高校
+              正在努力建设祖国改革开放特区
             %p
               喜欢看书、英语、编程、跑步、思考
             %p
@@ -34,25 +32,22 @@
             = image_tag("/work.gif",class:'self-info-img ui avatar small image')
           .brief-itro-desc
             %p
-              软件工程师和写作爱好者
+              坚信技术可以让生活变得更美好
             %p
-              致力于开发高性能、可用的商业软件
+              擅长后端开发，喜欢研究新技术
             %p
-              曾从事代码托管、聚合支付、区块链研发
-            %p
-              熟悉 backend, Blockchain 技术栈
+              致力研发高性能、可用的商业软件
+
         .column
           %h2.ui.header
             = image_tag("/dream.gif",class:'self-info-img ui avatar small image')
           .brief-itro-desc
             %p
-              敬畏未知，拥抱新事物
+              心存善念，永远热泪盈眶
             %p
-              求同存异，力争双赢合作
+              认识自己持续进化，敬畏未知
             %p
-              研发高性能系统架构，提高社会资源利用率
-            %p
-              多维度分享、学习实践、拓宽有限人生的无限边界
+              穷则独善其身，富则兼济天下
   .contact.segment
     .ui.text.container
       = form_for :contact, url: contacts_path, remote:true, html:{ class: 'ui form contact_form'} do |f|
