@@ -1,11 +1,9 @@
-source 'https://ruby.taobao.org'
+source 'https://gems.ruby-china.com'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -76,6 +74,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -98,4 +97,9 @@ end
 
 group :test do
   gem 'database_cleaner'
+end
+
+group :production do
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
