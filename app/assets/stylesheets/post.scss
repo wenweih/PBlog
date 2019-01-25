@@ -31,6 +31,15 @@
             font-weight: bold;
             line-height: 1.5;
           }
+          &>.markdown-body{
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+          }
+          &>.post-tag{
+            margin-top: 1rem;
+          }
           &>.like{
             display: inline;
           }
@@ -90,6 +99,17 @@
     }
   }
 }
+
+.markdown-body img {
+  margin: 0 5px;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  cursor: -webkit-zoom-in;
+  transition: all .25s ease-in-out;
+}
+
 .post.index{
   &>.pusher{
     height: auto !important;

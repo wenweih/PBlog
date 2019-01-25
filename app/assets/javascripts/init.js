@@ -114,6 +114,14 @@ App = {
 
         hljs.highlightBlock(block);
       });
+      $(".markdown-body pre").each(function(i, block) {
+        // http://stackoverflow.com/questions/31753617/how-can-i-remove-leading-whitespace-in-my-pre-code-block-without-removing-in
+        var html = $(this).html();
+        var pattern = html.match(/\s*\n[\t\s]*/);
+        $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
+
+        hljs.highlightBlock(block);
+      });
     }
   },
   initUtil: function(){
