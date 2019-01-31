@@ -27,14 +27,15 @@ A step by step introduce to run in local machine and deploy to server. Deadly si
 git clone https://github.com/wenweih/PBlog.git
 cd PBlog
 bundle install
-rails db:setup
+rails db:create
+rails db:migrate
 ```
 
 ### Development
 - Pow: ```ln -s the_path_of_PBlog ~/.pow/blog```
   now you can visit ```blog.dev```
 - or ```rails s```
-  now you can visit ```localhost:3000```
+  now you can visit ```rails server -p 3000 -b 127.0.0.1```
 
 ### Production
 [Capistrano](http://capistranorb.com) is a best tool to deploy Rails project.

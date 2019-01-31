@@ -85,7 +85,7 @@ App = {
     initTyped: function(){
       if($('.home.index').length > 0){
         $('.person-description').typed({
-          strings: ['Enjoy coding, Happy life'],
+          strings: ['Application Software Development – Web and Mobile (iOS)'],
           loop: true,
           showCursor: true,
           startDelay: 500,
