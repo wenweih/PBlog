@@ -1,7 +1,10 @@
 %footer
-  %span Copyright ©
-  = link_to "Wenwei Huang", root_path
-  = link_to "中文简体", change_locale_path(locale: "zh-CN"), class: "chinese_language"
-  \/
-  = link_to "English", change_locale_path(locale: "en")
-  = link_to "Power By PBlog Engine", "https://github.com/wenweih/PBlog", class: "pblog_link", target: "_blank"
+  .ui.horizontal.list
+    .disabled.item
+      Copyright © 老码农不上班
+    = link_to "中文简体", change_locale_path(locale: "zh-CN"), class: "chinese_language item"
+    .item
+      \/
+    = link_to "English", change_locale_path(locale: "en"), class: "item"
+    .item
+      = link_to "Power By PBlog Engine", "https://github.com/wenweih/PBlog", class: "pblog_link item", target: "_blank"

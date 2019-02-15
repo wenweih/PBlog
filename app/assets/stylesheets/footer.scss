@@ -6,18 +6,5 @@ footer{
   font-size: 15px;
   line-height: 1.42857143;
   color: #2c3e50;
-  // background-color: #78C2C4;
   padding-top: 2rem;
-  &>.chinese_language{
-    margin-left: 10rem;
-  }
-  &>.pblog_link{
-    float: right;
-    padding-right: 1rem;
-  }
-}
-@media only screen and (max-width: 700px) {
-  .chinese_language{
-    margin-left: 0!important;
-  }
 }
