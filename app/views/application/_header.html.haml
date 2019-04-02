@@ -5,9 +5,10 @@
         %a.toc.item
           %i.sidebar.icon
         = link_to "WENWEI HUANG",root_path, class:"top item #{nav_active(path: 'home#index')}"
-        = link_to "BLOG", post_index_path, class:"top item #{nav_active(path: 'blog#index')}"
-        = link_to "ABOUT","/blogs/resume",class:'top item'
-        = link_to "PORTFOLIO","#",class:'item top'
+        = link_to "Blog", post_index_path, class:"top item #{nav_active(path: 'blog#index')}"
+        = link_to "About","/blogs/resume",class:'top item'
+        = link_to "Cardanofans", "https://cardanofans.io/", class: "item top", target: "_blank"
+        = link_to "Portfolio","#",class:'item top'
         .right.item
           .ui.floating.teal.mini.message
             = SettingsLogic.hire
