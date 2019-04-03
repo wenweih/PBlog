@@ -19,7 +19,11 @@ class PostController < ApplicationController
     @like_count = @post.likes.count
     gon.id = params[:id]
     # gon.like_id = encrypt @like_count
-    fresh_when(@post)
+    if @post.published?
+      fresh_when(@post)
+    else
+      redirect_to({action: :index}, notice: "The post is not allow to be read")
+    end
   end
 
   def update
