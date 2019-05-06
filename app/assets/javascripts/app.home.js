@@ -43,6 +43,11 @@ App.Home = {
     });
 
   },
+  wechat: function() {
+    $('.ui.circular.wechat').on('click', function(){
+      $('.contact_form').dimmer('toggle');
+    })
+  },
   sayHello: function(){
     setTimeout(function(){
       $(document).notification("Hello");

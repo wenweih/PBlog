@@ -2,6 +2,7 @@
 //= require jQuery.headroom
 //= require semantic-ui/accordion
 //= require semantic-ui/form
+//= require semantic-ui/dimmer.min
 //= require semantic-ui/sidebar
 //= require semantic-ui/sticky
 //= require semantic-ui/site
@@ -135,6 +136,7 @@ App = {
     home: function(){
       if($('.home.index').length > 0){
         App.Home.messageForm();
+        App.Home.wechat();
       }
     }
   },

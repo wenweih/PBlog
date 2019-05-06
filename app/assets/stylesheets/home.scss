@@ -127,4 +127,10 @@ $home-title-color: #999aa1;
   @-moz-document url-prefix() {
       margin-top: 0 !important
   }
+
+  .header {
+    &>button {
+      float: right;
+    }
+  }
 }

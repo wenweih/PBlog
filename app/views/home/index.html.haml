@@ -53,10 +53,14 @@
       .ui.attached.message
         .header
           Ask Me Anything
+          %button.ui.circular.wechat.icon.button.green.big
+            %i.wechat.icon
         %p
           Conect with me for consultation
       = form_for :contact, url: contacts_path, remote:true, html:{ class: 'ui form attached fluid segment contact_form'} do |f|
         .ui.error.message
+        .ui.inverted.dimmer
+          = image_tag("/wechat.png", class: 'ui middle aligned centered middle small image')
         .two.fields
           .field
             = f.text_field  :name, :placeholder => "Name"
