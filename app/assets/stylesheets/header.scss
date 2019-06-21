@@ -2,12 +2,15 @@
   &.headroom{
     will-change: transform;
     transition: transform 200ms linear;
+    -webkit-transition: -webkit-transform 200ms linear;
   }
   &.headroom--pinned {
     transform: translateY(0%);
+    -webkit-transform: translateY(0%);
   }
   &.headroom--unpinned {
     transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
   }
   min-height: 60px;
   position: fixed;
